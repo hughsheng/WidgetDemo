@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/help_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="19"
+            android:textColor="@color/pjd_txt_col"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:text="11111111"/>
+        <ImageView
+            android:id="@+id/help_indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/dakai"/>
+    </LinearLayout>
+</LinearLayout>

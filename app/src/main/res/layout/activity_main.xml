@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sztangli.widgedemo.MainToolBarActivity">
+
+    <TextView
+        android:id="@+id/main_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_content"
+        android:layout_gravity="center"/>
+    <!--
+    app:backgroundTint：设置FAB的背景颜色。
+    app:rippleColor：设置FAB点击时的背景颜色。
+    app:elevation：设置默认状态下FAB的阴影大小。
+    app:pressedTranslationZ：点击时候FAB的阴影大小。
+    app:fabSize：设置FAB的大小，该属性有两个值，分别为normal和mini，
+    对应的FAB大小分别为56dp和40dp。
+    app:layout_anchor：设置FAB的锚点，即以哪个控件为参照点设置位置。
+    <—该属性需要在CoordinatorLayout布局中使用才生效—->
+    app:layout_anchorGravity：设置FAB相对锚点的位置，值有 bottom、center、right、left、top等。
+    <—该属性需要在CoordinatorLayout布局中使用才生效—->
+    -->
+        <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom|right"
+        android:src="@android:drawable/ic_dialog_alert" />
+    <com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView
+        android:id="@+id/expandablelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView>
+
+    <include layout="@layout/fragment_floatingbutton" />
+
+    <GridView
+        android:id="@+id/widgeCollection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </GridView>
+</android.support.design.widget.CoordinatorLayout  >

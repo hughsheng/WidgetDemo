@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Widge Demo</string>
+    <string name="text_content">点击有惊喜!</string>
+    <string name="title_activity_expandable">ExpandableActivity</string>
+    <array name="widges">
+        <item>snackBar</item>
+        <item>expandableListView</item>
+        <item>recycleListView</item>
+        <item>floatingButton</item>
+        <item>cart</item>
+        <item>popWindow</item>
+        <item>voiceRecognize</item>
+        <item>articleShow</item>
+        <item>coordinatorSample</item>
+        <item>pay</item>
+        <item>animation</item>
+        <item>weather</item>
+    </array>
+
+    <string name="header_text">The Header</string>
+    <string name="footer_text">The Footer</string>
+</resources>

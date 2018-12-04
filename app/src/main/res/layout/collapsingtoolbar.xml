@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CollapsingToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:minHeight="30dp"
+    app:contentScrim="@mipmap/ic_launcher_round"
+    app:layout_collapseMode="pin"
+    app:statusBarScrim="@color/white"
+    app:theme="@style/ToolbarStyle">
+    <!--statusBarScrim:折叠后状态栏背景,contentScrim折叠后背景-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/back" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="标题" />
+
+            <Spinner
+                android:id="@+id/title_spinner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CollapsingToolbarLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/wx_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/pay_wx" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信支付"
+                    android:textColor="#1e1e1e"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="推荐有微信账号的用户使用"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/rbtn_wx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:button="@drawable/checkbox_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zfb_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/pay_zfb" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支付宝支付"
+                    android:textColor="#1e1e1e"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="推荐有支付宝账号的用户使用"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/rbtn_zfb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:button="@drawable/checkbox_bg" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/pay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/pay_btn_selector"
+        android:gravity="center"
+        android:text="确认并付款"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+</android.support.constraint.ConstraintLayout>
