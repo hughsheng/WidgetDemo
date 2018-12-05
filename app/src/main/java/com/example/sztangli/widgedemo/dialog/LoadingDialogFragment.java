@@ -1,27 +1,20 @@
 package com.example.sztangli.widgedemo.dialog;
 
-import android.app.Dialog;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.ContentLoadingProgressBar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.TextView;
 
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.base.fragment.BaseDialogFragment;
 
 /**
  * created by tl on 2018-10-23
  * 加载框
  */
-public class LoadingDialogFragment extends DialogFragment {
+public class LoadingDialogFragment extends BaseDialogFragment {
 
   public static final String TAG = "LoadingDialogFragment";
 
@@ -32,11 +25,14 @@ public class LoadingDialogFragment extends DialogFragment {
     return new LoadingDialogFragment();
   }
 
-
-  @NonNull
   @Override
-  public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-    View view = LayoutInflater.from(getActivity()).inflate(R.layout.loading, null);
+  public void onStart() {
+    super.onStart();
+    //  setGravity(Gravity.BOTTOM);
+  }
+
+  @Override
+  protected void setContentView(View view) {
     TextView status_tv = view.findViewById(R.id.status_tv);
     ContentLoadingProgressBar load_progress = view.findViewById(R.id.load_progress);
     if (status != null) {
@@ -48,19 +44,21 @@ public class LoadingDialogFragment extends DialogFragment {
       load_progress.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(getActivity(),
           color), PorterDuff.Mode.MULTIPLY);
     }
-    Dialog dialog = new Dialog(getActivity(), R.style.DialogFragment);
-    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-    dialog.setContentView(view);
-    dialog.setCancelable(false);
-    dialog.setCanceledOnTouchOutside(false);
-    return dialog;
+    cancelable(false);
+    cancelableOnTouchOutside(false);
   }
 
 
-  public void showWithStatus(FragmentManager manager, String tag, String status) {
+  @Override
+  protected int getLayoutId() {
+    return R.layout.loading;
+  }
+
+
+  public void showWithStatus(FragmentManager manager, String status) {
     this.status = status;
     if (!isAdded()) {
-      show(manager, tag);
+      show(manager, TAG);
     }
   }
 

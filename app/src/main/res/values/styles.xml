@@ -19,6 +19,10 @@
     </style>
 
 
+    <style name="AppTheme.welcome" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/bg_default</item>
+    </style>
+
     <!--沉侵式布局-->
     <style name="AppTheme.windowTranslucent" parent="AppTheme">
         <!--布局内容延展到状态栏-->

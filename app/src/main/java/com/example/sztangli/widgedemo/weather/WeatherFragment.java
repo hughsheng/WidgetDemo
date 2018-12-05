@@ -77,7 +77,7 @@ public class WeatherFragment extends BaseFragment implements WeatherContract.IVi
 
   @Override
   public void show() {
-    showLoadingWithStatus(childManager, TAG, "获取天气中...");
+    showLoadingWithStatus(childManager, "获取天气中...");
   }
 
   @Override

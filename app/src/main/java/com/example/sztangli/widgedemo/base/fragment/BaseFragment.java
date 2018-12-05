@@ -89,12 +89,12 @@ public abstract class BaseFragment extends Fragment {
     Snackbar.make(rootView, resId, Snackbar.LENGTH_SHORT).show();
   }
 
-  public void showLoading(FragmentManager manager, String tag) {
-    loadingDialogFragment.show(manager, tag);
+  public void showLoading(FragmentManager manager) {
+    loadingDialogFragment.show(manager, LoadingDialogFragment.TAG);
   }
 
-  public void showLoadingWithStatus(FragmentManager manager, String tag, String status) {
-    loadingDialogFragment.showWithStatus(manager, tag, status);
+  public void showLoadingWithStatus(FragmentManager manager, String status) {
+    loadingDialogFragment.showWithStatus(manager, status);
   }
 
   public void hideLoading() {
