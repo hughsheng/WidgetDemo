@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="MVP框架模块"
+    minApi="9"
+    minBuildApi="15"
+    description="一键创建MVP框架模块">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="pageName"
+        name="Page Name"
+        type="string"
+        constraints="unique|nonempty"
+        default="Main"
+        help="请填写页面名,如填写 Main,会自动生成 MainActivity, MainPresenter 等文件" />
+
+    <parameter
+            id="packageName"
+            name="Root Package Name"
+            type="string"
+            constraints="package"
+            default="com.example.szTangli.widgedemo"
+            help="请填写你的项目包名,请认真核实此包名是否是正确的项目包名,不能包含子包,正确的格式如:me.jessyan.arms"
+            />
+        
+
+<parameter
+        id="activityType"
+        name="Activity Type"
+        type="enum"
+        default="1"
+        help="activity需要继承的基类" >
+        <option id="1">BaseActivity</option>
+        <option id="2">BaseToolBarActivity</option>
+        <option id="3">BaseNoToolBarActivity</option>
+    </parameter>
+
+
+
+<parameter
+        id="fragmentType"
+        name="Fragment Type"
+        type="enum"
+        default="1"
+        help="fragment需要继承的基类" >
+        <option id="1">BaseFragment</option>
+        <option id="2">BaseListFragment</option>
+    </parameter>
+
+ <parameter
+        id="activityPackageName"
+        name="Ativity Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}"
+        help="Activity 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />
+
+ <parameter
+        id="daggertPackageName"
+        name="Dagger Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.dagger" 
+        help="dagger 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
+ <parameter
+        id="mvpPackageName"
+        name="MVP Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.mvp"
+        help="MVP 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
+<parameter
+        id="ApiPackageName"
+        name="Api Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.api"
+        help="api 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
