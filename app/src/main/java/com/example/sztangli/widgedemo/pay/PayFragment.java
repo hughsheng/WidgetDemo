@@ -8,10 +8,15 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.example.sztangli.widgedemo.BuildConfig;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.pay.alipay.AliPayUtil;
 import com.example.sztangli.widgedemo.pay.alipay.PayResult;
+import com.tencent.mm.opensdk.constants.Build;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import java.util.Map;
 
@@ -29,6 +34,7 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
 
   public static final String TAG = "PayFragment";
   private AliPayUtil aliPayUtil;
+  private IWXAPI api;
 
   public static PayFragment newInstance() {
 
@@ -53,14 +59,23 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
   public void initialization() {
     aliPayUtil = new AliPayUtil(getActivity());
     aliPayUtil.setPaySuccessListener(this);
-
+    api = WXAPIFactory.createWXAPI(getContext(), "a74b8e6f148839eae1e301ddd9358fde");
+    api.registerApp("wxbbeeb0b350b1e5b9");
     rbtn_wx.setOnCheckedChangeListener(this);
     rbtn_zfb.setOnCheckedChangeListener(this);
     pay_btn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         if (rbtn_wx.isChecked()) {//微信支付
-
+          PayReq request = new PayReq();
+          request.appId = "wxd930ea5d5a258f4f";
+          request.partnerId = "1900000109";
+          request.prepayId= "1101000000140415649af9fc314aa427";
+          request.packageValue = "Sign=WXPay";
+          request.nonceStr= "1101000000140429eb40476f8896f4c9";
+          request.timeStamp= "1398746574";
+          request.sign= "7FFECB600D7157C5AA49810D2D8F28BC2811827B";
+          api.sendReq(request);
         } else if (rbtn_zfb.isChecked()) {//支付宝支付
           aliPayUtil.payV2(rbtn_zfb);
         }
@@ -112,6 +127,10 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
 
   }
 
+  //判断是否安装微信
+  private boolean isWXAppInstalledAndSupported() {
+    return api.isWXAppInstalled() && api.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
+  }
 
   @Override
   public void onDetach() {
