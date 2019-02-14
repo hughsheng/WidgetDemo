@@ -59,8 +59,8 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
   public void initialization() {
     aliPayUtil = new AliPayUtil(getActivity());
     aliPayUtil.setPaySuccessListener(this);
-    api = WXAPIFactory.createWXAPI(getContext(), "a74b8e6f148839eae1e301ddd9358fde");
-    api.registerApp("wxbbeeb0b350b1e5b9");
+    api = WXAPIFactory.createWXAPI(getContext(), BuildConfig.WEIXIN_KEY);
+    api.registerApp(BuildConfig.WEIXIN_KEY);
     rbtn_wx.setOnCheckedChangeListener(this);
     rbtn_zfb.setOnCheckedChangeListener(this);
     pay_btn.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +68,7 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
       public void onClick(View v) {
         if (rbtn_wx.isChecked()) {//微信支付
           PayReq request = new PayReq();
-          request.appId = "wxd930ea5d5a258f4f";
+          request.appId = BuildConfig.WEIXIN_KEY;
           request.partnerId = "1900000109";
           request.prepayId= "1101000000140415649af9fc314aa427";
           request.packageValue = "Sign=WXPay";

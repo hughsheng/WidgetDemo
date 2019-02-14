@@ -15,6 +15,7 @@
         <item>pay</item>
         <item>animation</item>
         <item>weather</item>
+        <item>video</item>
     </array>
 
     <string name="header_text">The Header</string>

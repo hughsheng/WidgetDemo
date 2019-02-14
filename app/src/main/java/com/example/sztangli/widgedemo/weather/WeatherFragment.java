@@ -1,12 +1,17 @@
 package com.example.sztangli.widgedemo.weather;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.api.bean.ErrorResultBean;
 import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
+import com.example.sztangli.widgedemo.dialog.PunchDialog;
+import com.example.sztangli.widgedemo.weather.mvp.EncryptToSHAUtils;
 import com.example.sztangli.widgedemo.weather.mvp.WeatherBean;
 import com.example.sztangli.widgedemo.weather.mvp.WeatherContract;
 
@@ -19,7 +24,7 @@ public class WeatherFragment extends BaseFragment implements WeatherContract.IVi
 
   public static final String TAG = "WeatherFragment";
   private WeatherContract.Presenter mPresenter;
-
+  private PunchDialog punchDialog;
 
   @BindView(R.id.city_tv)
   TextView city_tv;
@@ -53,7 +58,14 @@ public class WeatherFragment extends BaseFragment implements WeatherContract.IVi
 
   @Override
   public void initialization() {
-    mPresenter.getWeather("深圳");
+    //  mPresenter.getWeather("深圳");
+    String token = "BCB53E10018841A0B2BB84CAC23BD601";
+    String macDress = "60:cd:a9:02:8b:5a";
+    String IMEI = "356718082533560";
+    String version = "秒通3.1.8.2";
+    String signature = EncryptToSHAUtils.encryptToSHA("token=" + token +
+        "&key=C83V1#WJNEJCSF8FSN*RVY49HAM!692C");
+    mPresenter.punch(token, macDress, IMEI, version, signature);
   }
 
 
@@ -63,6 +75,19 @@ public class WeatherFragment extends BaseFragment implements WeatherContract.IVi
     aqi_tv.setText("api:" + weatherBean.getAqi());
     degree_tv.setText("温度:" + weatherBean.getWendu());
     tip_tv.setText("友情提示:" + weatherBean.getGanmao());
+  }
+
+  @Override
+  public void punchSuccess(String result) {
+    if (punchDialog == null) {
+      punchDialog = PunchDialog.newInstance();
+    }
+
+    if (!punchDialog.isAdded()) {
+      punchDialog.setPunchResult(result);
+      punchDialog.show(childManager, PunchDialog.TAG);
+    }
+
   }
 
   @Override
@@ -84,6 +109,5 @@ public class WeatherFragment extends BaseFragment implements WeatherContract.IVi
   public void hide() {
     hideLoading();
   }
-
 
 }

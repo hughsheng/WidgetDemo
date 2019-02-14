@@ -10,10 +10,14 @@ public interface WeatherContract {
 
   interface IView extends BaseView<Presenter> {
     void getWeatherSuccess(WeatherBean weatherBean);
+
+    void punchSuccess(String result);
   }
 
   interface Presenter extends BasePresenter {
     void getWeather(String city);
+
+    void punch(String token, String mac, String code, String mobleName, String signature);
   }
 
 

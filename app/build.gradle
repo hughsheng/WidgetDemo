@@ -155,6 +155,15 @@ android {
 //        }
     }
 
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+
     //资源混淆
     andResGuard {
         // mappingFile = file("./resource_mapping.txt")
@@ -219,6 +228,7 @@ android {
 //        }
 //    }
 //}
+
 
 //依赖
 dependencies {
@@ -297,4 +307,7 @@ dependencies {
 
     implementation 'se.emilsjolander:stickylistheaders:2.7.0'
     implementation 'com.flipboard:bottomsheet-core:1.5.1'
+
+    //视频播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1'
 }

@@ -20,6 +20,7 @@ import com.example.sztangli.widgedemo.shoppingCart.ShoppingCartActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
 import com.example.sztangli.widgedemo.utils.ConstanceValue;
 import com.example.sztangli.widgedemo.utils.SnackbarUtil;
+import com.example.sztangli.widgedemo.video.VideoActivity;
 import com.example.sztangli.widgedemo.weather.WeatherActivity;
 import com.example.sztangli.widgedemo.xunfeiVoice.XunfeiVoiceToolBarActivity;
 import com.iflytek.cloud.SpeechConstant;
@@ -94,6 +95,10 @@ public class MainToolBarActivity extends BaseToolBarActivity implements MainFrag
 
       case ConstanceValue.WEATHER:
         show(WeatherActivity.class, ConstanceValue.WEATHER);
+        break;
+
+      case ConstanceValue.VIDEO:
+        show(VideoActivity.class, ConstanceValue.VIDEO);
         break;
     }
   }

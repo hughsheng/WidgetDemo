@@ -16,7 +16,8 @@ public class ConstanceValue {
   public static final String COORDINATORSAMPLE = "coordinatorSample";
   public static final String PAY = "pay";
   public static final String ANIMATION = "animation";
-  public static final String WEATHER="weather";
+  public static final String WEATHER = "weather";
+  public static final String VIDEO = "video";
 
   //异常code
   public static final int HTTP_ERROR = 0x900;    //网络异常

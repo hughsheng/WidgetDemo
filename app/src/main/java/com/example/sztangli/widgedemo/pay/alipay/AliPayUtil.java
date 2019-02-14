@@ -237,7 +237,7 @@ public class AliPayUtil {
   }
 
 
-  public class AliPayTask extends AsyncTask<String, Void, Map<String, String>> {
+  private class AliPayTask extends AsyncTask<String, Void, Map<String, String>> {
 
     @Override
     protected Map<String, String> doInBackground(String... params) {

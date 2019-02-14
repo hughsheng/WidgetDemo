@@ -24,7 +24,7 @@ public abstract class BaseToolBarActivity extends BaseActivity {
   @BindView(R.id.toolbar)
   protected Toolbar toolbar;
   @BindView(R.id.back_iv)
-  ImageView back_iv;
+  protected ImageView back_iv;
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
