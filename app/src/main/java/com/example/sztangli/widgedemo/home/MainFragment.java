@@ -1,4 +1,4 @@
-package com.example.sztangli.widgedemo;
+package com.example.sztangli.widgedemo.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 
 import java.util.ArrayList;
@@ -68,4 +69,5 @@ public class MainFragment extends BaseFragment {
     interface MainListener {
         void showWidge(String type);
     }
+
 }

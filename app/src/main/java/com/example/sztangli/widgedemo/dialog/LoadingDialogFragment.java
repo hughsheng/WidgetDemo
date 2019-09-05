@@ -1,9 +1,9 @@
 package com.example.sztangli.widgedemo.dialog;
 
 import android.graphics.PorterDuff;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.ContentLoadingProgressBar;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.ContentLoadingProgressBar;
 import android.view.View;
 import android.widget.TextView;
 

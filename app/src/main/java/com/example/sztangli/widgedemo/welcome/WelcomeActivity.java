@@ -3,7 +3,7 @@ package com.example.sztangli.widgedemo.welcome;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.sztangli.widgedemo.MainToolBarActivity;
+import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.base.activity.BaseNoToolBarActivity;
 
 /**

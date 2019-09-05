@@ -1,8 +1,8 @@
 package com.example.sztangli.widgedemo.coordinatorsample;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.fragment.BaseFragment;

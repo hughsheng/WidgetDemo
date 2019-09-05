@@ -1,15 +1,14 @@
-package com.example.sztangli.widgedemo;
+package com.example.sztangli.widgedemo.home;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.database.sqlite.SQLiteBindOrColumnIndexOutOfRangeException;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.animation.AnimationToolBarActivity;
 import com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity;
 import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
-import com.example.sztangli.widgedemo.dialog.LoadingDialogFragment;
 import com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity;
 import com.example.sztangli.widgedemo.recycleListView.RecycleToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity;
@@ -23,8 +22,6 @@ import com.example.sztangli.widgedemo.utils.SnackbarUtil;
 import com.example.sztangli.widgedemo.video.VideoActivity;
 import com.example.sztangli.widgedemo.weather.WeatherActivity;
 import com.example.sztangli.widgedemo.xunfeiVoice.XunfeiVoiceToolBarActivity;
-import com.iflytek.cloud.SpeechConstant;
-import com.iflytek.cloud.SpeechUtility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,8 +38,6 @@ public class MainToolBarActivity extends BaseToolBarActivity implements MainFrag
 
   @Override
   public void initalFragment(Bundle savedInstanceState) {
-    // 将“12345678”替换成您申请的APPID，申请地址：http://open.voicecloud.cn
-    SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59a7aa21");
     // toolbar.setNavigationIcon(null);
     widges = getResources().getStringArray(R.array.widges);
     ArrayList<String> data = new ArrayList<>(Arrays.asList(widges));

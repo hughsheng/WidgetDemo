@@ -35,7 +35,7 @@
             android:name="CHANNEL"
             android:value="${CHANNEL_VALUE}" />
 
-        <activity android:name=".MainToolBarActivity" />
+        <activity android:name=".home.MainToolBarActivity" />
         <activity android:name=".expandabelListView.ExpandableToolBarActivity" />
         <activity android:name=".floatingButtom.FloatingButtonToolBarActivity" />
         <activity android:name=".popwindow.PoPWindowActiivty" />

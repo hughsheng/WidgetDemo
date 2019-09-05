@@ -1,4 +1,4 @@
-package com.example.sztangli.widgedemo;
+package com.example.sztangli.widgedemo.home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.sztangli.widgedemo.R;
 
 import java.util.ArrayList;
 

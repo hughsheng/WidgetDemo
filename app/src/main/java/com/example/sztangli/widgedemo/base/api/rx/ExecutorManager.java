@@ -1,7 +1,7 @@
 package com.example.sztangli.widgedemo.base.api.rx;
 
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.io.File;
 import java.io.FileFilter;

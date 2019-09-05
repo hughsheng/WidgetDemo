@@ -3,7 +3,6 @@ package com.example.sztangli.widgedemo.base.api.rx;
 import com.example.sztangli.widgedemo.base.api.bean.ErrorResultBean;
 import com.example.sztangli.widgedemo.base.api.bean.ResultBean;
 import com.example.sztangli.widgedemo.base.api.exception.ServerApiException;
-import com.example.sztangli.widgedemo.weather.mvp.PunchBean;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -114,11 +113,7 @@ public class SchedulersCompat {
                 } else {
                   return Observable.just(resultBean.getData());
                 }
-              } else if (object instanceof PunchBean) {
-                PunchBean punchBean = (PunchBean) object;
-                int result = punchBean.getResult();
-                return Observable.just(punchBean.getData());
-              } else {
+              }  else {
                 return Observable.error(new ServerApiException(-1, "服务器数据正在维护"));
               }
             }

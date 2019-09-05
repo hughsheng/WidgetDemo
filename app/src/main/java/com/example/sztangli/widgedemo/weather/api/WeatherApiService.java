@@ -3,7 +3,6 @@ package com.example.sztangli.widgedemo.weather.api;
 
 import com.example.sztangli.widgedemo.base.api.bean.ResultBean;
 import com.example.sztangli.widgedemo.utils.HttpUtil;
-import com.example.sztangli.widgedemo.weather.mvp.PunchBean;
 import com.example.sztangli.widgedemo.weather.mvp.WeatherBean;
 
 import io.reactivex.Observable;
@@ -28,10 +27,4 @@ public interface WeatherApiService {
   @GET(HttpUtil.WEATHERAPI)
   Observable<ResultBean<WeatherBean>> getWeather(@Query(CITY) String city);
 
-  @FormUrlEncoded
-  @POST("https://mthttp.fangte.com/api/Attendance/ClockIn")
-  Observable<PunchBean> NewGetPlayCard(@Field(TOKEN) String token, @Field(MAC) String mac,
-                                       @Field(LLI_UNICODE) String lliUnicode,
-                                       @Field(PHONE_OS) String phoneOS,
-                                       @Field(SIGNATURE) String signature);
 }

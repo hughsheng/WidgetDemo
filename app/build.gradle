@@ -22,7 +22,7 @@ android {
         config {
             keyAlias 'widgeDemo'
             keyPassword '111111'
-            storeFile file('D:/projects/WidgeDemo/keystore/widgeDemo.jks')
+            storeFile file('../keystore/widgeDemo.jks')
             storePassword '111111'
         }
     }
@@ -30,14 +30,17 @@ android {
     //默认配置
     defaultConfig {
         applicationId "com.example.sztangli.widgedemo"
+        //代表着编译的时候，会采用该api的规范进行代码检查和警告，但是并不会编译进apk中。
         compileSdkVersion 28
         buildToolsVersion '28.0.3'
+        // 代表着最低版本，在编译的时候兼容到该参数指定最低版本api
         minSdkVersion 21
+        //代表着目标版本，在编译的时候会将该版本的api编译进apk中。(app运行api)
         targetSdkVersion 28
         versionCode appversionCode
         versionName appVersionName
         flavorDimensions "default"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // Enabling multidex support.
         multiDexEnabled true
         javaCompileOptions {
@@ -47,7 +50,7 @@ android {
         }
         //设置支持的so库架构类型
         ndk {
-            abiFilters 'armeabi', "armeabi-v7a"
+            abiFilters 'armeabi', "armeabi-v7a","x86"
         }
     }
 
@@ -236,37 +239,37 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     //android官方支持库
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //android官方测试库
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
     // Set this dependency to use JUnit 4 rules
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
     // Set this dependency to build and run Espresso tests
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // Set this dependency to build and run UI Automator tests
-    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
     //evenbus
-    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
     //butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 
     //leakcanary内存泄漏检测
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:1.5.4"
-    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:1.5.4"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:1.6.2"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:1.6.2"
 
     //谷歌分包方案，解决方法数最大值65536限制(api21以下需要该库)
-    implementation "com.android.support:multidex:1.0.3"
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     //gson
-    implementation "com.google.code.gson:gson:2.8.2"
+    implementation "com.google.code.gson:gson:2.8.5"
 
     //websocket
     // implementation "com.dhh:websocket:1.3.0"
@@ -281,7 +284,7 @@ dependencies {
     implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
 
     //glide图片加载库
-    implementation 'com.github.bumptech.glide:glide:4.6.1@aar'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
     //封装的上拉下拉recycleview
     implementation project(path: ':easy_recyclerview_library')
     //支付宝sdk

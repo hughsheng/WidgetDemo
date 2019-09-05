@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sztangli.widgedemo.MainToolBarActivity">
+    tools:context="com.example.sztangli.widgedemo.home.MainToolBarActivity">
 
     <TextView
         android:id="@+id/main_tv"
@@ -25,7 +25,7 @@
     app:layout_anchorGravity：设置FAB相对锚点的位置，值有 bottom、center、right、left、top等。
     <—该属性需要在CoordinatorLayout布局中使用才生效—->
     -->
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,4 +48,4 @@
         android:layout_height="match_parent">
 
     </GridView>
-</android.support.design.widget.CoordinatorLayout  >
+</androidx.coordinatorlayout.widget.CoordinatorLayout  >

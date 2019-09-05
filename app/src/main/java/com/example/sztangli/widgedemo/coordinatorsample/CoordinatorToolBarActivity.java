@@ -1,18 +1,17 @@
 package com.example.sztangli.widgedemo.coordinatorsample;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.sztangli.widgedemo.MainToolBarActivity;
+import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.activity.BaseNoToolBarActivity;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.adapter.TypeAdapter;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
 

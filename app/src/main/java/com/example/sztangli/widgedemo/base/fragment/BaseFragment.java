@@ -2,17 +2,15 @@ package com.example.sztangli.widgedemo.base.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.sztangli.widgedemo.base.activity.BaseActivity;
 import com.example.sztangli.widgedemo.dialog.LoadingDialogFragment;
-import com.example.sztangli.widgedemo.utils.ScreenUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

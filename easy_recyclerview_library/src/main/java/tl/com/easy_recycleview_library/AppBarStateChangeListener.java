@@ -1,6 +1,6 @@
 package tl.com.easy_recycleview_library;
 
-import android.support.design.widget.AppBarLayout;
+import com.google.android.material.appbar.AppBarLayout;
 
 /**
  * 

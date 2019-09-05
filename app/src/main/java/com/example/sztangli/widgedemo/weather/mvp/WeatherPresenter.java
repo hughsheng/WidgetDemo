@@ -65,37 +65,7 @@ public class WeatherPresenter extends HttpDelegate implements WeatherContract.Pr
     addSubscription(disposable);
   }
 
-  @Override
-  public void punch(String token, String mac, String code, String mobleName, String signature) {
-    Disposable disposable = weatherApiService.NewGetPlayCard(token, mac, code, mobleName, signature)
-        .compose(SchedulersCompat.applyIoSchedulers())  //以第一个订阅的线程为准
-        .doOnSubscribe(new Consumer<Object>() {
-          @Override
-          public void accept(Object o) throws Exception {
-            //  iView.show();
-          }
-        })
-        .subscribeOn(AndroidSchedulers.mainThread())
-        .doOnTerminate(new Action() {
-          @Override
-          public void run() throws Exception {
-            // iView.hide();
-          }
-        })
-        .subscribe(new Consumer<Object>() {
-          @Override
-          public void accept(Object o) throws Exception {
-            String result = (String) o;
-            iView.punchSuccess(result);
-          }
-        }, new ErrorResultBean() {
-          @Override
-          protected void onError(ErrorResultBean.ErrorBean errorBean) {
-            iView.onLoadFail(errorBean);
-          }
-        });
-    addSubscription(disposable);
-  }
+
 
 
   @Override

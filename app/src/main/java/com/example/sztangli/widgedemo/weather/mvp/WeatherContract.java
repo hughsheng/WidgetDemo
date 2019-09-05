@@ -17,7 +17,6 @@ public interface WeatherContract {
   interface Presenter extends BasePresenter {
     void getWeather(String city);
 
-    void punch(String token, String mac, String code, String mobleName, String signature);
   }
 
 

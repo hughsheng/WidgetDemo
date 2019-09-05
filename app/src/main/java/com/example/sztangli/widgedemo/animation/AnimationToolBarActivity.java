@@ -5,7 +5,7 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 
-import com.example.sztangli.widgedemo.MainToolBarActivity;
+import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;

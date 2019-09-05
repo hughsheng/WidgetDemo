@@ -3,7 +3,7 @@ package com.example.sztangli.widgedemo.pay;
 import android.os.Bundle;
 
 import com.alipay.sdk.app.EnvUtils;
-import com.example.sztangli.widgedemo.MainToolBarActivity;
+import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;

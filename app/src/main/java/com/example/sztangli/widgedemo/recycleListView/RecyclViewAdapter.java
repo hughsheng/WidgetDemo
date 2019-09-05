@@ -1,7 +1,7 @@
 package com.example.sztangli.widgedemo.recycleListView;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.adapter.BaseRecyclerAdapter;

@@ -1,6 +1,6 @@
 package tl.com.easy_recycleview_library.util;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 

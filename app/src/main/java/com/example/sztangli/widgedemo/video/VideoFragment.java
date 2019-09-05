@@ -9,8 +9,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.v4.widget.ContentLoadingProgressBar;
+
+import androidx.core.widget.ContentLoadingProgressBar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -19,10 +19,7 @@ import android.widget.VideoView;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 
-import java.io.File;
-import java.io.InputStream;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 import butterknife.BindView;
 import io.reactivex.Observable;

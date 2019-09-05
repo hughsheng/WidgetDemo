@@ -1,6 +1,6 @@
 package com.example.sztangli.widgedemo.base.fragment;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import com.example.sztangli.widgedemo.R;

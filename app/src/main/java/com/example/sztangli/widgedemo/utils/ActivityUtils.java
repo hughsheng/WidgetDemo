@@ -1,10 +1,10 @@
 package com.example.sztangli.widgedemo.utils;
 
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -14,7 +14,7 @@ import static com.example.sztangli.widgedemo.utils.Preconditions.checkNotNull;
 
 
 /**
- * Created by linfp on 2016/5/10.
+ *  * Created by linfp on 2016/5/10.
  * 用于管理Fragment跳转
  */
 public class ActivityUtils {

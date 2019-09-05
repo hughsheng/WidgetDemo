@@ -1,6 +1,6 @@
 package com.example.sztangli.widgedemo.base.mvp;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.sztangli.widgedemo.base.api.bean.ErrorResultBean;
 

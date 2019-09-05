@@ -1,6 +1,6 @@
 package tl.com.easy_recycleview_library.ItemDecoration;
 
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 class SpanLookupFactory {
 

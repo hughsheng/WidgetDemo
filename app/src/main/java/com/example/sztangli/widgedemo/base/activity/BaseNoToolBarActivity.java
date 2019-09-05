@@ -1,7 +1,7 @@
 package com.example.sztangli.widgedemo.base.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * created by tl on 2018-10-23

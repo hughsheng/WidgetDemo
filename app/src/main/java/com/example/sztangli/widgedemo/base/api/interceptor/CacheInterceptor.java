@@ -1,6 +1,6 @@
 package com.example.sztangli.widgedemo.base.api.interceptor;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.sztangli.widgedemo.base.app.AppApplication;
 import com.example.sztangli.widgedemo.utils.NetworkUtils;

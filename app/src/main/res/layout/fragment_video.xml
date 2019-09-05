@@ -27,7 +27,7 @@
             android:src="@mipmap/video_start"
             android:visibility="gone" />
 
-        <android.support.v4.widget.ContentLoadingProgressBar
+        <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/load_progress"
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
