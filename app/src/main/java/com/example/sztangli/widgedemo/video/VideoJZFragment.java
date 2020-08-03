@@ -41,6 +41,7 @@ public class VideoJZFragment extends BaseFragment {
     super.onResume();
     Jzvd.FULLSCREEN_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
     Jzvd.NORMAL_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+
   }
 
   @Override
@@ -50,8 +51,7 @@ public class VideoJZFragment extends BaseFragment {
 
   @Override
   public void initialization() {
-    String url = "https://mtnic.fangte.com/video/%E7%94%B5%E5%8D%95%E8%BD%A6%E8%A6%81%E9%98%B2%E6" +
-        "%82%A3%E4%BA%8E%E6%9C%AA%E2%80%9D%E7%87%83%E2%80%9C.mp4";
+    String url = "https://172.10.5.25:8010/admin/file/image?fileid=159254770571596494";
     video_player.setUp(url, "测试标题", Jzvd.SCREEN_WINDOW_NORMAL);
     Glide.with(this)
         .load("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640")

@@ -16,6 +16,7 @@
         <item>animation</item>
         <item>weather</item>
         <item>video</item>
+        <item>workManager</item>
     </array>
 
     <string name="header_text">The Header</string>
