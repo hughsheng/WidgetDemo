@@ -27,4 +27,23 @@ public class ConstanceValue {
     public static final int SERVER_ERROR = 0x903;  //服务器异常
     public static final int CONNECT_ERROR = 0x904; //连接失败
     public static final int UNKNOW_ERROR = 0x905; //其他错误
+
+
+    //motion
+    public static final String MOTION_MOVE = "基本运动";
+    public static final String MOTION_ATTRIBUTE = "属性";
+    public static final String MOTION_PIC_CHANGE = "图片转换";
+    public static final String MOTION_PAINT_POSITION = "帧位置";
+    public static final String MOTION_PAINT_VALUE = "帧插值";
+    public static final String MOTION_PAINT_CYCLE = "帧周期";
+    public static final String MOTION_COORDINATOR_LAYOUT = "CoordinatorLayout";
+    public static final String MOTION_DRAWER_LAYOUT = "DrawerLayout";
+    public static final String MOTION_SIDE_BAR = "侧边栏";
+    public static final String MOTION_PARALLAX = "视差";
+    public static final String MOTION_VIEWPAGER = "ViewPager";
+    public static final String MOTION_VIEWPAGER_LOTTIE = "ViewPager - Lottie";
+    public static final String MOTION_SPORT = "复杂运动";
+    public static final String MOTION_FRAGMENT = "Fragment 转换";
+    public static final String MOTION_KEY_TRIGGER = "KeyTrigger";
+    public static final String MOTION_STATE = "多状态";
 }

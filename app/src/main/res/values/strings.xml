@@ -19,6 +19,26 @@
         <item>workManager</item>
     </array>
 
+    <array name="motion">
+        <item>基本运动</item>
+        <item>属性</item>
+        <item>图片转换</item>
+        <item>帧位置</item>
+        <item>帧插值</item>
+        <item>帧周期</item>
+        <item>CoordinatorLayout</item>
+        <item>DrawerLayout</item>
+        <item>侧边栏</item>
+        <item>视差</item>
+        <item>ViewPager</item>
+        <item>ViewPager - Lottie</item>
+        <item>复杂运动</item>
+        <item>Fragment 转换</item>
+        <item>类似 YouTube 的运动</item>
+        <item>KeyTrigger</item>
+        <item>多状态</item>
+    </array>
+
     <string name="header_text">The Header</string>
     <string name="footer_text">The Footer</string>
 </resources>

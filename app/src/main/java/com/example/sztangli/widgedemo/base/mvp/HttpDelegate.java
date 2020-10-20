@@ -1,8 +1,8 @@
 package com.example.sztangli.widgedemo.base.mvp;
 
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * Created by fangpenglin on 16/6/19.

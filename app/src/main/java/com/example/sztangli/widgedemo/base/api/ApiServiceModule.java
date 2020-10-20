@@ -31,7 +31,7 @@ import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -235,7 +235,7 @@ public class ApiServiceModule {
   protected Retrofit providesRetrofit(OkHttpClient okHttpClient) {
     return new Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())        //配置Gson
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //配置rxjava
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //配置rxjava
         .baseUrl(mBaseUrl)     //配置基本地址
         .client(okHttpClient)  //配置客户端
         .build();

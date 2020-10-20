@@ -2,15 +2,16 @@
 
 buildscript {
     repositories {
+        maven { url 'http://maven.aliyun.com/repository/google' }
+        maven { url 'http://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        google()
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.8-RC1'
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.19'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -18,15 +19,12 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/repository/google' }
+        maven { url 'http://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        google()
         jcenter()
-     //   jcenter(){url 'http://jcenter.bintray.com/'}
-      //  mavenCentral()
-        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
-        //  maven{ url 'http://maven.oschina.net/content/groups/public/'}
     }
 }
 

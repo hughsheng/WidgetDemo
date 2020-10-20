@@ -4,15 +4,14 @@ import com.example.sztangli.widgedemo.base.api.bean.ErrorResultBean;
 import com.example.sztangli.widgedemo.base.api.bean.ResultBean;
 import com.example.sztangli.widgedemo.base.api.exception.ServerApiException;
 import com.google.gson.Gson;
-
 import java.io.IOException;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.ObservableTransformer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableSource;
+import io.reactivex.rxjava3.core.ObservableTransformer;
+import io.reactivex.rxjava3.functions.Function;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Response;
 
 /**

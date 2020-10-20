@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.sztangli.widgedemo.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -18,9 +19,9 @@ import java.util.ArrayList;
 
 public class WidgeAdapter extends BaseAdapter {
 
-    private ArrayList<String> data;
+    private List<String> data;
     private Context mContext;
-    public WidgeAdapter(Context mContext,ArrayList<String> data) {
+    public WidgeAdapter(Context mContext,List<String> data) {
         this.data=data;
         this.mContext=mContext;
     }

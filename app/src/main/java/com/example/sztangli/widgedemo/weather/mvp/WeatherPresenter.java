@@ -4,13 +4,11 @@ import com.example.sztangli.widgedemo.base.api.bean.ErrorResultBean;
 import com.example.sztangli.widgedemo.base.api.rx.SchedulersCompat;
 import com.example.sztangli.widgedemo.base.mvp.HttpDelegate;
 import com.example.sztangli.widgedemo.weather.api.WeatherApiService;
-
 import javax.inject.Inject;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Action;
+import io.reactivex.rxjava3.functions.Consumer;
 
 /**
  * created by tl on 2018-10-23

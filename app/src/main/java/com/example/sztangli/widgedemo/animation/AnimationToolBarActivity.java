@@ -16,6 +16,7 @@ import com.example.sztangli.widgedemo.utils.ActivityUtils;
 public class AnimationToolBarActivity extends BaseToolBarActivity {
 
   private AnimationFragment animationFragment;
+  private MotionLayoutFragment motionLayoutFragment;
 
   @Override
   public int getLayoutResId() {
@@ -33,8 +34,9 @@ public class AnimationToolBarActivity extends BaseToolBarActivity {
     getWindow().setEnterTransition(slide);
     getWindow().setExitTransition(new Explode().setDuration(1000));
     setTitleCenter(getIntent().getStringExtra(MainToolBarActivity.TITLE));
-    animationFragment = AnimationFragment.newInstance();
-    ActivityUtils.addFragmentToActivity(mFragmentManager, animationFragment, R.id.container,
+  //  animationFragment = AnimationFragment.newInstance();
+    motionLayoutFragment = MotionLayoutFragment.newInstance();
+    ActivityUtils.addFragmentToActivity(mFragmentManager, motionLayoutFragment, R.id.container,
         AnimationFragment.TAG);
   }
 
