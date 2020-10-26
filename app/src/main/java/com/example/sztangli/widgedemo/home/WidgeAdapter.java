@@ -21,9 +21,10 @@ public class WidgeAdapter extends BaseAdapter {
 
     private List<String> data;
     private Context mContext;
-    public WidgeAdapter(Context mContext,List<String> data) {
-        this.data=data;
-        this.mContext=mContext;
+
+    public WidgeAdapter(Context mContext, List<String> data) {
+        this.data = data;
+        this.mContext = mContext;
     }
 
     @Override
@@ -43,23 +44,26 @@ public class WidgeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder=null;
-        if(convertView==null){
-            LayoutInflater inflater=LayoutInflater.from(mContext);
-            convertView=inflater.inflate(R.layout.item_widge,null);
-            holder=new ViewHolder();
-            holder.widgeName= (TextView) convertView.findViewById(R.id.widge_name);
+        ViewHolder holder = null;
+        if (convertView == null) {
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(R.layout.item_widge, null);
+            holder = new ViewHolder();
+            holder.widgeName = (TextView) convertView.findViewById(R.id.widge_name);
             convertView.setTag(holder);
-        }else {
-            holder= (ViewHolder) convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.widgeName.setText(data.get(position));
-
+        String type = data.get(position);
+        holder.widgeName.setText(type);
         return convertView;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         TextView widgeName;
     }
+
+
+
 }

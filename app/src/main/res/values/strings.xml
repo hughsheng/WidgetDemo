@@ -37,6 +37,7 @@
         <item>类似 YouTube 的运动</item>
         <item>KeyTrigger</item>
         <item>多状态</item>
+        <item>展开</item>
     </array>
 
     <string name="header_text">The Header</string>

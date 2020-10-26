@@ -46,4 +46,5 @@ public class ConstanceValue {
     public static final String MOTION_FRAGMENT = "Fragment 转换";
     public static final String MOTION_KEY_TRIGGER = "KeyTrigger";
     public static final String MOTION_STATE = "多状态";
+    public static final String MOTION_EXPEND = "展开";
 }

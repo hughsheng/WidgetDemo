@@ -10,6 +10,7 @@
             motion:dragDirection="dragRight"
             motion:touchAnchorId="@id/button"
             motion:touchAnchorSide="right" />
+
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -17,10 +18,10 @@
             android:id="@id/button"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="10dp">
             <CustomAttribute
                 motion:attributeName="BackgroundColor"
                 motion:customColorValue="#D81B60" />
