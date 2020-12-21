@@ -1,1 +1,3 @@
+include ':mvvmlibrary'
+include ':httplibrary'
 include ':app', ':easy_recyclerview_library'

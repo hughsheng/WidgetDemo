@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -91,6 +92,16 @@ public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
    */
   private boolean isHeaderType(int itemViewType) {
     return mHeaderViews.size() > 0 && mHeaderTypes.contains(itemViewType);
+  }
+
+
+  /**
+   * 刷新列表
+   */
+  public void refreshData() {
+    if (mInnerAdapter != null) {
+      mInnerAdapter.notifyDataSetChanged();
+    }
   }
 
   /**
