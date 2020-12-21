@@ -23,8 +23,8 @@ public class BuglyUtil {
     public static void initBugly(Context context, String buildType, String buildName,
                                  String appID,String buglyAppID ,int bannerResID, int layoutID, Class activity) {
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(context);
-        strategy.setAppChannel(BuildConfig.BUILD_TYPE);  //设置渠道
-        strategy.setAppVersion(BuildConfig.VERSION_NAME);      //App的版本
+        strategy.setAppChannel(buildType);  //设置渠道
+        strategy.setAppVersion(buildName);      //App的版本
         strategy.setAppPackageName(appID);  //App的包名
         //设置只在哪个activity弹窗
         Beta.canShowUpgradeActs.add(activity);
