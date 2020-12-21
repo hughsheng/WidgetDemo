@@ -1,6 +1,7 @@
 package com.example.httplibrary;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.example.httplibrary.interceptor.CacheInterceptor;
 import com.example.httplibrary.interceptor.HeadInterceptor;
@@ -19,7 +20,6 @@ import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
@@ -28,13 +28,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-import dagger.Module;
-import dagger.Provides;
-import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ApplicationComponent;
-import dagger.hilt.android.qualifiers.ApplicationContext;
 import okhttp3.Cache;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -57,11 +51,11 @@ public class BaseApiServiceModule {
     protected int WRITE_TIME = 180;                          //设置写时间
     protected int CONNECT_TIME = 5;                          //设置连接时间
     protected int CACHE_SIZE = 1024 * 1024 * 50;             //设置缓存大小
-    public static final String WITHOUT_CERTIFICATE = "without_certificate";            //无证书标识
-    protected String mBaseUrl = "https://183.62.99.102:8088/"; //设置baseUrl("http://81.71.9.129:8010/")
+    public static final String WITHOUT_CERTIFICATE = "without_certificate";//无证书标识
+    protected String mBaseUrl = ""; //设置baseUrl
     protected String mCacheName = "mCache";                   //缓存文件名
-    protected String mReleaseCer = "cer/certificate.cer";  //正式环境证书地址
-    protected String mDebugCer = "cer/certificate.cer";      //测试环境证书地址
+    protected String mReleaseCer = "";  //正式环境证书地址
+    protected String mDebugCer = "";      //测试环境证书地址
 
 
     //    @Provides  //dragger2提供实例注解
@@ -191,36 +185,43 @@ public class BaseApiServiceModule {
     }
 
     //    @Provides
-//    @Singleton
+    //    @Singleton
     protected KeyStore providesNewEmptyKeyStore(Context context) {
+
         try {
-            InputStream inputStream;
+            InputStream inputStream = null;
+
             if (BuildConfig.DEBUG) {
-                inputStream = context.getAssets().open(mDebugCer);   //测试服务器证书
+                if (!TextUtils.isEmpty(mDebugCer)) {
+                    inputStream = context.getAssets().open(mDebugCer);   //测试服务器证书
+                }
             } else {
-                inputStream = context.getAssets().open(mReleaseCer);      //正式环境证书
+                if (!TextUtils.isEmpty(mReleaseCer)) {
+                    inputStream = context.getAssets().open(mReleaseCer);      //正式环境证书
+                }
             }
 
-            CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
-            Collection<? extends Certificate> certificates = certificateFactory.generateCertificates
-                    (inputStream);
-            if (certificates.isEmpty()) {
-                throw new IllegalArgumentException("expected non-empty set of trusted certificates");
-            }
-
-            if (inputStream != null) {
-                inputStream.close();
-            }
             String password = "password";
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType()); // 这里添加自定义的密码，默认
             InputStream in = null; // By convention, 'null' creates an empty key store.
             keyStore.load(in, null);
 
-            // Put the certificates a key store.
-            int index = 0;
-            for (Certificate certificate : certificates) {
-                String certificateAlias = Integer.toString(index++);
-                keyStore.setCertificateEntry(certificateAlias, certificate);
+            if (inputStream != null) {
+                CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+                Collection<? extends Certificate> certificates = certificateFactory.generateCertificates
+                        (inputStream);
+                if (certificates.isEmpty()) {
+                    throw new IllegalArgumentException("expected non-empty set of trusted certificates");
+                }
+
+                inputStream.close();
+
+                // Put the certificates a key store.
+                int index = 0;
+                for (Certificate certificate : certificates) {
+                    String certificateAlias = Integer.toString(index++);
+                    keyStore.setCertificateEntry(certificateAlias, certificate);
+                }
             }
             return keyStore;
         } catch (Exception e) {
