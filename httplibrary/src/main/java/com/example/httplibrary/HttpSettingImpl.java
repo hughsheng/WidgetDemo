@@ -2,12 +2,6 @@ package com.example.httplibrary;
 
 import android.content.Context;
 
-import com.example.httplibrary.interceptor.CacheInterceptor;
-import com.example.httplibrary.interceptor.HeadInterceptor;
-import com.example.httplibrary.interceptor.ParamsInterceptor;
-import com.example.httplibrary.interceptor.ResponseInterceptor;
-import com.example.httplibrary.interceptor.VerificationInterceptor;
-
 import java.security.KeyStore;
 
 import javax.net.ssl.HostnameVerifier;
@@ -15,7 +9,6 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-import dagger.hilt.android.qualifiers.ApplicationContext;
 import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -46,7 +39,7 @@ public interface HttpSettingImpl {
 
     SSLSocketFactory getSSLSocketFactory(TrustManagerFactory trustManagerFactory);
 
-    SSLSocketFactory getDebugSSLSocketFactory(TrustManagerFactory trustManagerFactory);
+    SSLSocketFactory getDebugSSLSocketFactory();
 
     TrustManagerFactory getTrustManagerFactory(KeyStore keyStore);
 

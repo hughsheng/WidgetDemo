@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Collection;
@@ -157,11 +158,31 @@ public class BaseApiServiceModule {
 //    @Provides
 //    @Singleton
 //    @Named(WITHOUT_CERTIFICATE)
-    protected SSLSocketFactory providesDebugSSLSocketFactory(TrustManagerFactory trustManagerFactory) {
+    protected SSLSocketFactory providesDebugSSLSocketFactory() {
         //Create an SSLContext that uses our TrustManager
         try {
+            // Create a trust manager that does not validate certificate chains
+            final TrustManager[] trustAllCerts = new TrustManager[]{
+                    new X509TrustManager() {
+                        @Override
+                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain,
+                                                       String authType) throws CertificateException {
+                        }
+
+                        @Override
+                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain,
+                                                       String authType) throws CertificateException {
+                        }
+
+                        @Override
+                        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                            return new java.security.cert.X509Certificate[]{};
+                        }
+                    }
+            };
+
             SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
+            sslContext.init(null, trustAllCerts, new SecureRandom());
             return sslContext.getSocketFactory();
         } catch (Exception e) {
             e.printStackTrace();
