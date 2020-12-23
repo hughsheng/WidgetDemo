@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.base.fragment;
+package mvvmlibrary.base.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,18 +8,15 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
-import com.example.mvvmlibrary.base.activity.BaseDataBindingActivity;
-import com.example.mvvmlibrary.base.data.BaseViewModel;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+
+import mvvmlibrary.base.activity.BaseDataBindingActivity;
+import mvvmlibrary.base.data.BaseViewModel;
 
 
 /**

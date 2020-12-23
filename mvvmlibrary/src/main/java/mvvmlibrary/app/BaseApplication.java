@@ -1,14 +1,12 @@
-package com.example.mvvmlibrary.app;
+package mvvmlibrary.app;
 
 import android.app.Application;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-
-import com.example.mvvmlibrary.util.SharedPreferencesUtils;
-
 import java.util.List;
 import java.util.Map;
+import mvvmlibrary.util.SharedPreferencesUtils;
 
 /**
  * created by tl

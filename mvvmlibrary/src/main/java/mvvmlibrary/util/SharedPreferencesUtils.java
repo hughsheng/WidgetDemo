@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.util;
+package mvvmlibrary.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.util;
+package mvvmlibrary.util;
 
 import java.util.HashMap;
 import java.util.Iterator;

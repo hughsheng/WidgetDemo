@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.customizeview;
+package mvvmlibrary.customizeview;
 
 import android.content.Context;
 import android.content.res.Resources;

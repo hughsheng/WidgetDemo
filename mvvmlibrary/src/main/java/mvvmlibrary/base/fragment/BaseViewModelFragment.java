@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.base.fragment;
+package mvvmlibrary.base.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-
-import com.example.mvvmlibrary.base.data.BaseViewModel;
 
 /**
  * @author: 廖华凯

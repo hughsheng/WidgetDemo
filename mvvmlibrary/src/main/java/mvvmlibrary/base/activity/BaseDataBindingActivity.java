@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.base.activity;
+package mvvmlibrary.base.activity;
 
 
 import android.os.Bundle;
@@ -6,12 +6,11 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
-
-import com.example.mvvmlibrary.base.data.BaseViewModel;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
+
+import mvvmlibrary.base.data.BaseViewModel;
 
 
 /**

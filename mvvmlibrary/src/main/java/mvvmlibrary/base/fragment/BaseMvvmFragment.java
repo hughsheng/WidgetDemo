@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.base.fragment;
+package mvvmlibrary.base.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,15 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
-import com.example.mvvmlibrary.base.data.BaseViewModel;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.disposables.Disposable;
+import mvvmlibrary.base.data.BaseViewModel;
 
 /**
  * @author: 廖华凯

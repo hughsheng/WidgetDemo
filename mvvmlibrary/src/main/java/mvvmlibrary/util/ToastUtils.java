@@ -1,7 +1,6 @@
-package com.example.mvvmlibrary.util;
+package mvvmlibrary.util;
 
 import android.content.Context;
-import android.view.Gravity;
 import android.widget.Toast;
 
 /**

@@ -1,17 +1,16 @@
-package com.example.mvvmlibrary.util;
+package mvvmlibrary.util;
 
 import android.content.Context;
-import android.net.Uri;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.example.mvvmlibrary.R;
 
-import java.io.File;
 import java.lang.ref.SoftReference;
 
 

@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.base.activity;
+package mvvmlibrary.base.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,17 +15,21 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.fragment.app.FragmentManager;
+
 import com.example.mvvmlibrary.R;
-import com.example.mvvmlibrary.util.ActivityUtils;
-import com.example.mvvmlibrary.util.AlertDialogUtils;
 import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
+
+import mvvmlibrary.util.ActivityUtils;
+import mvvmlibrary.util.AlertDialogUtils;
 
 /**
  * created by tl

@@ -1,26 +1,29 @@
-package com.example.mvvmlibrary.base.activity;
+package mvvmlibrary.base.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.databinding.ViewDataBinding;
 import com.example.mvvmlibrary.R;
 
+import mvvmlibrary.base.data.BaseViewModel;
+
 /**
- * @author: 廖华凯
- * @description:
- * @since: 2020/11/26 10:27
- * @company: 固远（深圳）信息技术有限公司
+ * @author : tl
+ * @description : 带导航栏activity
+ * @since: 2020/9/7
+ * @company : 固远（深圳）信息技术有限公司
  **/
-public abstract class BaseActionBarActivity extends BaseActivity {
+public abstract class BaseToolbarActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends BaseDataBindingActivity<V, VM> {
+
     protected ImageView back_iv;
     protected TextView title_tv;
     protected TextView right_tv;
     protected ImageView right_iv;
 
     @Override
-    protected void init(Bundle savedInstanceState) {
+    protected void initData(Bundle savedInstanceState) {
         initView();
         back_iv.setOnClickListener(new View.OnClickListener() {
             @Override

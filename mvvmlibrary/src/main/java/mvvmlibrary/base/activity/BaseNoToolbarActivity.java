@@ -1,10 +1,11 @@
-package com.example.mvvmlibrary.base.activity;
+package mvvmlibrary.base.activity;
 
 import android.os.Bundle;
 
 import androidx.databinding.ViewDataBinding;
 
-import com.example.mvvmlibrary.base.data.BaseViewModel;
+import mvvmlibrary.base.data.BaseViewModel;
+
 
 /**
  * @author : tl

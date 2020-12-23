@@ -1,18 +1,15 @@
-package com.example.mvvmlibrary.base.data;
+package mvvmlibrary.base.data;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.example.mvvmlibrary.data.SingleLiveEvent;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import mvvmlibrary.data.SingleLiveEvent;
 
 /**
  * created by tl

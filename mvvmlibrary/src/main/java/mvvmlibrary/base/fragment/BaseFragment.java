@@ -1,7 +1,6 @@
-package com.example.mvvmlibrary.base.fragment;
+package mvvmlibrary.base.fragment;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import com.example.mvvmlibrary.util.AlertDialogUtils;
-import com.example.mvvmlibrary.util.ToastUtils;
 import com.google.android.material.snackbar.Snackbar;
+
+import mvvmlibrary.util.AlertDialogUtils;
+import mvvmlibrary.util.ToastUtils;
 
 /**
  * created by tl
