@@ -2,22 +2,26 @@ package com.example.sztangli.widgedemo.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
-import com.example.sztangli.widgedemo.base.activity.BaseNoToolBarActivity;
+import com.guyuan.handlein.base.ui.activity.BaseNoToolbarActivity;
 
 /**
- * created by tl on 2018-12-4
+ * created by com.tl on 2018-12-4
  */
-public class WelcomeActivity extends BaseNoToolBarActivity {
+public class WelcomeActivity extends BaseNoToolbarActivity {
   @Override
-  public void initalFragment(Bundle savedInstanceState) {
+  protected void initFragment(Bundle savedInstanceState) {
     startActivity(new Intent(this, MainToolBarActivity.class));
     finish();
   }
 
   @Override
-  public int getLayoutResId() {
+  protected int getLayoutID() {
+    return 0;
+  }
+
+  @Override
+  protected int getVariableId() {
     return 0;
   }
 }

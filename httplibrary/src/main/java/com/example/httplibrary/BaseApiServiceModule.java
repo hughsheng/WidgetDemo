@@ -2,13 +2,12 @@ package com.example.httplibrary;
 
 import android.content.Context;
 import android.text.TextUtils;
-
+import com.com.tl.httplibrary.BuildConfig;
 import com.example.httplibrary.interceptor.CacheInterceptor;
 import com.example.httplibrary.interceptor.HeadInterceptor;
 import com.example.httplibrary.interceptor.ParamsInterceptor;
 import com.example.httplibrary.interceptor.ResponseInterceptor;
 import com.example.httplibrary.interceptor.VerificationInterceptor;
-
 import java.io.File;
 import java.io.InputStream;
 import java.security.KeyStore;
@@ -19,7 +18,6 @@ import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
-
 import javax.inject.Named;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -28,12 +26,11 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -314,7 +311,7 @@ public class BaseApiServiceModule {
     protected Retrofit providesRetrofit(OkHttpClient.Builder okHttpClientBuilder) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())        //配置Gson
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //配置rxjava
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //配置rxjava
                 .baseUrl(mBaseUrl)     //配置基本地址
                 .client(okHttpClientBuilder.build())  //配置客户端
                 .build();
@@ -326,7 +323,7 @@ public class BaseApiServiceModule {
     protected Retrofit providesDebugRetrofit(@Named(WITHOUT_CERTIFICATE) OkHttpClient.Builder okHttpClientBuilder) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())        //配置Gson
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //配置rxjava
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //配置rxjava
                 .baseUrl(mBaseUrl)     //配置基本地址
                 .client(okHttpClientBuilder.build())  //配置客户端
                 .build();

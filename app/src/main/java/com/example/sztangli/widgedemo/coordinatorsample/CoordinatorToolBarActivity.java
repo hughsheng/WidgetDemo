@@ -8,19 +8,18 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.activity.BaseNoToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.adapter.TypeAdapter;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
+import com.guyuan.handlein.base.ui.activity.BaseNoToolbarActivity;
 
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
 
-public class CoordinatorToolBarActivity extends BaseNoToolBarActivity {
+public class CoordinatorToolBarActivity extends BaseNoToolbarActivity {
 
   private AppBarLayout.LayoutParams params;
 
@@ -32,27 +31,6 @@ public class CoordinatorToolBarActivity extends BaseNoToolBarActivity {
   TextView title_center;
   @BindView(R.id.title_back)
   ImageView title_back;
-
-  @Override
-  public int getLayoutResId() {
-    return R.layout.activity_coordinator;
-  }
-
-  @Override
-  public void initalFragment(Bundle savedInstanceState) {
-    CoordinatorFragment fragment = CoordinatorFragment.newInstance();
-    ActivityUtils.addFragmentToActivity(mFragmentManager, fragment, R.id.container,
-        CoordinatorFragment.TAG);
-    title_center.setText(getIntent().getStringExtra(MainToolBarActivity.TITLE));
-    title_back.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        finish();
-      }
-    });
-    setSpinner();
-  }
-
 
   private void setSpinner() {
     title_spinner.setVisibility(View.VISIBLE);
@@ -115,4 +93,28 @@ public class CoordinatorToolBarActivity extends BaseNoToolBarActivity {
     });
   }
 
+  @Override
+  protected void initFragment(Bundle savedInstanceState) {
+    CoordinatorFragment fragment = CoordinatorFragment.newInstance();
+    ActivityUtils.addFragmentToActivity(fragmentManager, fragment, R.id.container,
+            CoordinatorFragment.TAG);
+    title_center.setText(getIntent().getStringExtra(MainToolBarActivity.TITLE));
+    title_back.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        finish();
+      }
+    });
+    setSpinner();
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.activity_coordinator;
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
+  }
 }

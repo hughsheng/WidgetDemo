@@ -4,9 +4,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +33,6 @@ public class ExpandableFragment extends BaseFragment implements ExpandableListVi
         return fragment;
     }
 
-
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_expandable;
-    }
-
-    @Override
-    public void onUnBind() {
-
-    }
-
     @Override
     public void initialization() {
         initData();
@@ -70,5 +58,15 @@ public class ExpandableFragment extends BaseFragment implements ExpandableListVi
                 listView.collapseGroup(j);
             }
         }
+    }
+
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.fragment_expandable;
     }
 }

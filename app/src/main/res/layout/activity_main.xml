@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sztangli.widgedemo.home.MainToolBarActivity">
+    tools:context="com.com.tl.sztangli.widgedemo.home.MainToolBarActivity">
 
     <TextView
         android:id="@+id/main_tv"
@@ -32,13 +32,13 @@
         android:layout_margin="10dp"
         android:layout_gravity="bottom|right"
         android:src="@android:drawable/ic_dialog_alert" />
-    <com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView
+    <com.com.tl.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView
         android:id="@+id/expandablelist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
-    </com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView>
+    </com.com.tl.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView>
 
     <include layout="@layout/fragment_floatingbutton" />
 

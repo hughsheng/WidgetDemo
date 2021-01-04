@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity">
-<com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView
+    tools:context="com.com.tl.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity">
+<com.com.tl.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView
     android:id="@+id/animatedExpandableList"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-</com.example.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView>
+</com.com.tl.sztangli.widgedemo.expandabelListView.AnimatedExpandableListView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

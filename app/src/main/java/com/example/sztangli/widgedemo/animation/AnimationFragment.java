@@ -8,16 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.utils.AnimationUtils;
+import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
 
 /**
- * Created by tl on 2018-9-25
+ * Created by com.tl on 2018-9-25
  */
 public class AnimationFragment extends BaseFragment implements View.OnClickListener {
 
@@ -55,7 +54,7 @@ public class AnimationFragment extends BaseFragment implements View.OnClickListe
   private ObjectAnimator animationScaleY;
   private ObjectAnimator animationAlpha;
   private Animator animationShow;
-  private BaseToolBarActivity baseToolBarActivity;
+  private BaseToolbarActivity baseToolBarActivity;
   private boolean hide = false;
 
   public static AnimationFragment newInstance() {
@@ -68,18 +67,8 @@ public class AnimationFragment extends BaseFragment implements View.OnClickListe
   }
 
   @Override
-  public int getLayoutResId() {
-    return R.layout.fragment_animation;
-  }
-
-  @Override
-  public void onUnBind() {
-
-  }
-
-  @Override
   public void initialization() {
-    baseToolBarActivity = (BaseToolBarActivity) getActivity();
+    baseToolBarActivity = (BaseToolbarActivity) getActivity();
     rotateBt.setOnClickListener(this);
     transparencyBt.setOnClickListener(this);
     cropBt.setOnClickListener(this);
@@ -185,19 +174,29 @@ public class AnimationFragment extends BaseFragment implements View.OnClickListe
         animator.start();
         break;
 
-      case R.id.show_btn:
-        if (baseToolBarActivity != null) {
-          baseToolBarActivity.showStatusBar();
-        }
-        break;
-
-      case R.id.hide_btn:
-        if (baseToolBarActivity != null) {
-          baseToolBarActivity.hideStatusBar();
-        }
-        break;
+//      case R.id.show_btn:
+//        if (baseToolBarActivity != null) {
+//         baseToolBarActivity.showStatusBar();
+//        }
+//        break;
+//
+//      case R.id.hide_btn:
+//        if (baseToolBarActivity != null) {
+//          baseToolBarActivity.hideStatusBar();
+//        }
+//        break;
     }
 
 
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.fragment_animation;
   }
 }

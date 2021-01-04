@@ -23,7 +23,7 @@
             name="Root Package Name"
             type="string"
             constraints="package"
-            default="com.example.szTangli.widgedemo"
+            default="com.com.example.szTangli.widgedemo"
             help="请填写你的项目包名,请认真核实此包名是否是正确的项目包名,不能包含子包,正确的格式如:me.jessyan.arms"
             />
         

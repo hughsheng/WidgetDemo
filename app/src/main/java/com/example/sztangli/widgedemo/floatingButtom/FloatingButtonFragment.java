@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.utils.AnimationUtil;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
 
@@ -40,16 +40,6 @@ public class FloatingButtonFragment extends BaseFragment {
     }
 
     @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_floatingbutton;
-    }
-
-    @Override
-    public void onUnBind() {
-
-    }
-
-    @Override
     public void initialization() {
         floatingDraftButton.registerButton(liveness);
         floatingDraftButton.registerButton(floatingActionButton2);
@@ -70,5 +60,15 @@ public class FloatingButtonFragment extends BaseFragment {
                 Toast.makeText(getContext(), "liveness", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.fragment_floatingbutton;
     }
 }

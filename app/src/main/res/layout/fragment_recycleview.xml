@@ -3,12 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <tl.com.easy_recycleview_library.BaseRecyclerView
+    <com.example.easy_recycleview_library.BaseRecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </tl.com.easy_recycleview_library.BaseRecyclerView>
+    </com.example.easy_recycleview_library.BaseRecyclerView>
 
     <include
         android:id="@+id/empty_view"

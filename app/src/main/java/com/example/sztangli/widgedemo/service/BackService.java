@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.sztangli.widgedemo.base.app.AppApplication;
+import com.guyuan.handlein.base.app.HandleInApplication;
 
 /**
  * .
@@ -14,7 +14,7 @@ public class BackService extends IntentService {
 
   public static final String ACTION_CACHE = "service.action.cache";
 
-  private AppApplication mApplication;
+  private HandleInApplication mApplication;
 
   public BackService() {
     super("BackService");
@@ -23,7 +23,7 @@ public class BackService extends IntentService {
   @Override
   public void onCreate() {
     super.onCreate();
-    mApplication = AppApplication.getInstance();
+    mApplication = HandleInApplication.getInstance();
   }
 
   @Override

@@ -5,10 +5,10 @@ import android.animation.ObjectAnimator;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
-import com.example.sztangli.widgedemo.base.app.AppApplication;
+import com.guyuan.handlein.base.app.HandleInApplication;
 
 /**
- * Created by tl on 2018-9-28
+ * Created by com.tl on 2018-9-28
  * 封装属性动画一些基本操作
  */
 public class AnimationUtils {
@@ -26,13 +26,13 @@ public class AnimationUtils {
 
   //从右进入
   public static ObjectAnimator inFromRight(View view) {
-    int rightDistance = AppApplication.getInstance().getWindowWidth() - view.getLeft();
+    int rightDistance = HandleInApplication.getInstance().getWindowWidth() - view.getLeft();
     return ObjectAnimator.ofFloat(view, "translationX", rightDistance, 0);
   }
 
   //从下进入
   public static ObjectAnimator inFromBottom(View view) {
-    int bottomDistance = AppApplication.getInstance().getWindowHeight() - view.getTop();
+    int bottomDistance = HandleInApplication.getInstance().getWindowHeight() - view.getTop();
     return ObjectAnimator.ofFloat(view, "translationY", bottomDistance, 0);
   }
 
@@ -50,13 +50,13 @@ public class AnimationUtils {
 
   //从右退出
   public static ObjectAnimator outToRight(View view) {
-    int rightDistance = AppApplication.getInstance().getWindowWidth() - view.getLeft();
+    int rightDistance = HandleInApplication.getInstance().getWindowWidth() - view.getLeft();
     return ObjectAnimator.ofFloat(view, "translationX", 0, rightDistance);
   }
 
   //从下退出
   public static ObjectAnimator outToBottom(View view) {
-    int bottomDistance = AppApplication.getInstance().getWindowHeight() - view.getTop();
+    int bottomDistance = HandleInApplication.getInstance().getWindowHeight() - view.getTop();
     return ObjectAnimator.ofFloat(view, "translationY", 0, bottomDistance);
   }
 

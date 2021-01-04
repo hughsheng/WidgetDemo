@@ -8,7 +8,7 @@ import com.example.sztangli.widgedemo.R;
 import cn.jzvd.JzvdStd;
 
 /**
- * created by tl on 2019-1-22
+ * created by com.tl on 2019-1-22
  */
 public class CustomVideoView extends JzvdStd {
 

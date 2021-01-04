@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.example.sztangli.widgedemo.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

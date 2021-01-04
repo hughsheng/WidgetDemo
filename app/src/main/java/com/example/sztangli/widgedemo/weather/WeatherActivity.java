@@ -4,36 +4,36 @@ import android.os.Bundle;
 
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
-import com.example.sztangli.widgedemo.weather.dagger.WeatherModule;
-import com.example.sztangli.widgedemo.weather.mvp.WeatherPresenter;
+import com.example.sztangli.widgedemo.weather.data.WeatherViewModel;
+import com.guyuan.handlein.base.databinding.ActivityWithToolbarBinding;
+import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
- * created by tl on 2018-10-23
+ * created by com.tl on 2018-10-23
  */
-public class WeatherActivity extends BaseToolBarActivity {
 
-  @Inject
-  WeatherPresenter mPresenter;
-
-  @Override
-  public int getLayoutResId() {
-    return R.layout.activity_base;
-  }
+public class WeatherActivity extends BaseToolbarActivity<ActivityWithToolbarBinding, WeatherViewModel> {
 
 
   @Override
-  public void initalFragment(Bundle savedInstanceState) {
+  protected void initFragment(Bundle savedInstanceState) {
     String title = getIntent().getStringExtra(MainToolBarActivity.TITLE);
     setTitleCenter(title);
     WeatherFragment mFragment = WeatherFragment.newInstance();
-    ActivityUtils.addFragmentToActivity(mFragmentManager, mFragment, R.id.container,
-        WeatherFragment.TAG);
-    getApiServiceComponent().getWeatherComponent(new WeatherModule(mFragment))
-        .inject(this);
+  //  ActivityUtils.addFragmentToActivity(fragmentManager, mFragment, R.id.fragment_container, WeatherFragment.TAG);
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.activity_with_toolbar;
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
   }
 
 }

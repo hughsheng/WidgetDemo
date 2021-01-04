@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.coordinatorsample.adapter.CoordinatorAdapter;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +30,6 @@ public class CoordinatorFragment extends BaseFragment {
   RecyclerView coordinator_rv;
 
   @Override
-  public int getLayoutResId() {
-    return R.layout.fragment_coordinator;
-  }
-
-  @Override
-  public void onUnBind() {
-
-  }
-
-  @Override
   public void initialization() {
     List<String> dataList = new ArrayList<>();
 
@@ -51,5 +41,15 @@ public class CoordinatorFragment extends BaseFragment {
     coordinator_rv.setLayoutManager(new LinearLayoutManager(getContext()));
     coordinator_rv.setAdapter(adapter);
 
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.fragment_coordinator;
   }
 }

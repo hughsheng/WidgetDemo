@@ -6,12 +6,11 @@ import androidx.core.content.ContextCompat;
 import androidx.core.widget.ContentLoadingProgressBar;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseDialogFragment;
+import com.guyuan.handlein.base.ui.fragment.BaseDialogFragment;
 
 /**
- * created by tl on 2018-10-23
+ * created by com.tl on 2018-10-23
  * 加载框
  */
 public class LoadingDialogFragment extends BaseDialogFragment {

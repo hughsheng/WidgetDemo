@@ -1,25 +1,16 @@
 package com.example.sztangli.widgedemo.animation;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-
-import androidx.constraintlayout.motion.widget.MotionLayout;
-import androidx.fragment.app.FragmentContainer;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.home.WidgeAdapter;
 import com.example.sztangli.widgedemo.utils.ConstanceValue;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * @author : tl
+ * @author : com.tl
  * @description :
  * @since: 2020/10/20 11:15
  * @company : 固远（深圳）信息技术有限公司
@@ -60,14 +51,15 @@ public class MotionLayoutFragment extends BaseFragment {
     }
 
     @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_motion;
+    protected int getVariableId() {
+        return 0;
     }
 
     @Override
-    public void onUnBind() {
-
+    protected int getLayoutID() {
+        return R.layout.fragment_motion;
     }
+
 
     @Override
     public void initialization() {

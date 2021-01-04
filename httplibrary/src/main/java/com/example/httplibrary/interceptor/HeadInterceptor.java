@@ -9,7 +9,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Created by tl on 2018-8-9
+ * Created by com.tl on 2018-8-9
  * 请求头拦截器
  */
 public class HeadInterceptor implements Interceptor {

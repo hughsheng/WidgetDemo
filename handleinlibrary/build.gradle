@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.library'
+}
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //开启databingding
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    compileOnly Android.meteria
+    compileOnly AndroidX.appcompat
+    compileOnly AndroidX.constraintlayout
+
+    testCompileOnly Depend.junit
+    androidTestCompileOnly Depend.androidTestJunit
+    androidTestCompileOnly Depend.espressoCore
+
+    //封装的上拉下拉recycleview
+    api project(path: ':easy_recyclerview_library')
+    api project(path: ':httplibrary')
+    api project(path: ':mvvmlibrary')
+
+    compileOnly SpinKit.runtime
+
+    //rxandroid
+    compileOnly Rxandroid.rxjava3
+    compileOnly Rxandroid.rxandroid
+
+    //retrofit
+    compileOnly Retrofit.runtime
+    compileOnly Retrofit.gson
+    compileOnly Retrofit.adapter
+    compileOnly Retrofit.logging
+
+    //hilt
+    compileOnly Hilt.daggerRuntime
+    kapt Hilt.daggerCompiler
+    compileOnly Hilt.viewModule
+    kapt Hilt.compiler
+
+    //bugly
+    compileOnly Bugly.upgrade
+    compileOnly Bugly.nativecrashreport
+
+    //evenbus
+    compileOnly EventBus.eventBus
+
+    //glide图片加载库
+    compileOnly Glide.runtime
+    compileOnly Glide.okhttp3Integration
+    compileOnly Glide.annotations
+    annotationProcessor Glide.compiler
+
+    //文件选择
+    compileOnly FilePicker.runtime
+}

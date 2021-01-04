@@ -23,9 +23,11 @@ object Versions {
     const val fragment = "1.3.0-alpha06"
     const val anko = "0.10.8"
     const val swiperefreshlayout = "1.0.0"
-    const val junit = "4.12"
+    const val junit = "4.13.1"
     const val junitExt = "1.1.1"
-    const val espressoCore = "3.2.0"
+    const val testRunner = "1.3.0"
+    const val testCore = "1.1.0"
+    const val espressoCore = "3.3.0"
     const val jDatabinding = "1.0.1"
     const val progressview = "1.0.0"
     const val runtime = "0.11.0"
@@ -40,9 +42,9 @@ object Versions {
     const val leakcanary = "1.6.2"
     const val gson = "2.8.5"
     const val glide = "4.10.0"
-    const val rxjava = "2.2.2"
+    const val rxjava = "3.0.0"
     const val greendao = "3.2.2"
-    const val rxandroid = "2.1.1"
+    const val rxandroid = "3.0.0"
     const val autosize = "1.1.2"
     const val bugly = "latest.release"
     const val spinKit = "1.4.0"
@@ -57,7 +59,7 @@ object AndroidX {
     val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     val constraintlayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
     val pagingRuntime = "androidx.paging:paging-runtime:${Versions.paging}"
 
     // alternatively - without Android dependencies for tests
@@ -73,7 +75,7 @@ object AndroidX {
     val cardview = "androidx.cardview:cardview:${Versions.cardview}"
     val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     val swiperefreshlayout =
-            "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swiperefreshlayout}"
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swiperefreshlayout}"
 
     val appStartup = "androidx.startup:startup-runtime:${Versions.appStartup}"
 
@@ -91,7 +93,8 @@ object Android {
 
 object Glide {
     const val runtime = "com.github.bumptech.glide:glide:${Versions.glide}"
-    const val okhttp3Integration = "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}@aar"
+    const val okhttp3Integration =
+        "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}@aar"
     const val annotations = "com.github.bumptech.glide:annotations:${Versions.glide}"
     const val compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 }
@@ -121,12 +124,13 @@ object SpinKit {
 }
 
 object TimePickerDialog {
-    const val timePickerDialog = "com.jzxiang.pickerview:TimePickerDialog:${Versions.timePickerDialog}"
+    const val timePickerDialog =
+        "com.jzxiang.pickerview:TimePickerDialog:${Versions.timePickerDialog}"
 }
 
 object Rxandroid {
-    const val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
-    const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
+    const val rxjava3 = "io.reactivex.rxjava3:rxjava:${Versions.rxjava}"
+    const val rxandroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxandroid}"
 }
 
 object Room {
@@ -183,7 +187,7 @@ object Retrofit {
     val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val mock = "com.squareup.retrofit2:retrofit-mock:${Versions.retrofit}"
     val logging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLogging}"
-    const val adapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
+    val adapter = "com.squareup.retrofit2:adapter-rxjava3:${Versions.retrofit}"
 }
 
 object Gson {
@@ -194,7 +198,9 @@ object Depend {
 
     val junit = "junit:junit:${Versions.junit}"
     val androidTestJunit = "androidx.test.ext:junit:${Versions.junitExt}"
+    val anndroidTestRunner = "androidx.test:runner:${Versions.testRunner}"
     val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+    val androidTestCore = "androidx.test:core:${Versions.testCore}"
     val jDatabinding = "com.hi-dhl:jdatabinding:${Versions.jDatabinding}"
     val progressview = "com.hi-dhl:progressview:${Versions.progressview}"
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
@@ -206,5 +212,6 @@ object FilePicker {
 
 object AndroidChart {
     const val mpAndroidChart = "com.github.PhilJay:MPAndroidChart:${Versions.mpAndroidChart}"
-    const val mpAndroidChartUtils = "com.teaanddogdog:mpandroidchartutil:${Versions.mpAndroidChartUtil}"
+    const val mpAndroidChartUtils =
+        "com.teaanddogdog:mpandroidchartutil:${Versions.mpAndroidChartUtil}"
 }

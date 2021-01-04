@@ -38,7 +38,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/test_api_btn"
         />
-    <com.example.sztangli.widgedemo.customViews.MyCustomView
+    <com.com.tl.sztangli.widgedemo.customViews.MyCustomView
         android:id="@+id/my_custom_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

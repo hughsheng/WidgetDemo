@@ -11,10 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
 import com.example.sztangli.widgedemo.customViews.MyCustomView;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
 
@@ -43,15 +42,6 @@ public class PopWindowFragment extends BaseFragment {
         PopWindowFragment fragment = new PopWindowFragment();
         fragment.setArguments(args);
         return fragment;
-    }
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_popwindow;
-    }
-
-    @Override
-    public void onUnBind() {
-
     }
 
     @Override
@@ -91,5 +81,15 @@ public class PopWindowFragment extends BaseFragment {
 
             }
         });
+    }
+
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.fragment_popwindow;
     }
 }

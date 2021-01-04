@@ -9,18 +9,15 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.core.widget.ContentLoadingProgressBar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import java.util.HashMap;
-
 import butterknife.BindView;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -31,7 +28,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 /**
- * created by tl on 2019-1-21
+ * created by com.tl on 2019-1-21
  */
 public class VideoFragment extends BaseFragment implements View.OnClickListener {
 
@@ -55,11 +52,6 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
     VideoFragment fragment = new VideoFragment();
     fragment.setArguments(args);
     return fragment;
-  }
-
-  @Override
-  public int getLayoutResId() {
-    return R.layout.fragment_video;
   }
 
 
@@ -95,6 +87,16 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
         project_detail_video.start();
         break;
     }
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.fragment_video;
   }
 
   class MyPlayerOnPreparedListener implements MediaPlayer.OnPreparedListener {
@@ -175,9 +177,4 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
     }
   }
 
-
-  @Override
-  public void onUnBind() {
-    disposable.dispose();
-  }
 }

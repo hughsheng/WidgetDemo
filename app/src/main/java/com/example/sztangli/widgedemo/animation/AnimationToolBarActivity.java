@@ -5,27 +5,23 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
+import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
 /**
- * Created by tl on 2018-9-25
+ * Created by com.tl on 2018-9-25
  */
-public class AnimationToolBarActivity extends BaseToolBarActivity {
+public class AnimationToolBarActivity extends BaseToolbarActivity {
 
   private AnimationFragment animationFragment;
-  private MotionLayoutFragment motionLayoutFragment;
+  private Fragment motionLayoutFragment;
 
   @Override
-  public int getLayoutResId() {
-    return R.layout.activity_base;
-  }
-
-
-  @Override
-  public void initalFragment(Bundle savedInstanceState) {
+  protected void initFragment(Bundle savedInstanceState) {
     // setJumpAnimation(R.transition.slide, R.transition.explode);
     //进入退出效果 注意这里 创建的效果对象是 Explode()
     Slide slide = new Slide();
@@ -34,10 +30,20 @@ public class AnimationToolBarActivity extends BaseToolBarActivity {
     getWindow().setEnterTransition(slide);
     getWindow().setExitTransition(new Explode().setDuration(1000));
     setTitleCenter(getIntent().getStringExtra(MainToolBarActivity.TITLE));
-  //  animationFragment = AnimationFragment.newInstance();
+    //  animationFragment = AnimationFragment.newInstance();
     motionLayoutFragment = MotionLayoutFragment.newInstance();
-    ActivityUtils.addFragmentToActivity(mFragmentManager, motionLayoutFragment, R.id.container,
-        AnimationFragment.TAG);
+    ActivityUtils.addFragmentToActivity(fragmentManager, motionLayoutFragment, R.id.container,
+            AnimationFragment.TAG);
+  }
+
+  @Override
+  protected int getLayoutID() {
+    return R.layout.activity_base;
+  }
+
+  @Override
+  protected int getVariableId() {
+    return 0;
   }
 
 

@@ -22,7 +22,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".base.app.AppApplication"
+        android:name="com.guyuan.handlein.base.app.HandleInApplication"
         android:allowBackup="false"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
@@ -35,16 +35,16 @@
             android:name="CHANNEL"
             android:value="${CHANNEL_VALUE}" />
 
-        <activity android:name=".home.MainToolBarActivity" />
-        <activity android:name=".expandabelListView.ExpandableToolBarActivity" />
-        <activity android:name=".floatingButtom.FloatingButtonToolBarActivity" />
-        <activity android:name=".popwindow.PoPWindowActiivty" />
-        <activity android:name=".recycleListView.RecycleToolBarActivity" />
-        <activity android:name=".shoppingCart.ShoppingCartActivity" />
-        <activity android:name=".xunfeiVoice.XunfeiVoiceToolBarActivity" />
-        <activity android:name=".articleShow.ArticleToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.home.MainToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.floatingButtom.FloatingButtonToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.popwindow.PoPWindowActiivty" />
+        <activity android:name="com.example.sztangli.widgedemo.recycleListView.RecycleToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.shoppingCart.ShoppingCartActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.xunfeiVoice.XunfeiVoiceToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity" />
         <activity
-            android:name=".coordinatorsample.CoordinatorToolBarActivity"
+            android:name="com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity"
             android:theme="@style/AppTheme.windowTranslucent" />
 
         <!-- AliPay -->
@@ -60,12 +60,12 @@
             android:exported="false"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".pay.PayToolBarActivity" />
-        <activity android:name=".wxapi.WXPayEntryActivity" />
-        <activity android:name=".animation.AnimationToolBarActivity" />
-        <activity android:name=".weather.WeatherActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.pay.PayToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.wxapi.WXPayEntryActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.animation.AnimationToolBarActivity" />
+        <activity android:name="com.example.sztangli.widgedemo.weather.WeatherActivity" />
         <activity
-            android:name=".welcome.WelcomeActivity"
+            android:name="com.example.sztangli.widgedemo.welcome.WelcomeActivity"
             android:theme="@style/AppTheme.welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -74,7 +74,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".video.VideoActivity"
+            android:name="com.example.sztangli.widgedemo.video.VideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <!-- AliPay -->

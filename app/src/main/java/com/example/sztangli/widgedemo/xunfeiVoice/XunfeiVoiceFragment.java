@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
-
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
 
@@ -33,16 +31,6 @@ public class XunfeiVoiceFragment extends BaseFragment implements View.OnClickLis
     }
 
     @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_xunfeivoice;
-    }
-
-    @Override
-    public void onUnBind() {
-
-    }
-
-    @Override
     public void initialization() {
         start.setOnClickListener(this);
         stop.setOnClickListener(this);
@@ -59,4 +47,13 @@ public class XunfeiVoiceFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.fragment_xunfeivoice;
+    }
 }

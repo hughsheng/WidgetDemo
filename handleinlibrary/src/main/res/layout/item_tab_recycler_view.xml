@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="12dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/selector_shape_grey_to_blue_1677ff_round_corner"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:paddingTop="7dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="7dp"
+        android:text="东莞厂区"
+        android:textColor="@color/color_selector_black_333333_to_white_ffffff"
+        android:textSize="@dimen/sp_12" />
+</FrameLayout>

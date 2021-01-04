@@ -1,6 +1,6 @@
 package com.example.httplibrary.bean;
 
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.functions.Consumer;
 
 /**
  * 请求失败结果的bean

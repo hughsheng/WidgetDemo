@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.animation.AnimationToolBarActivity;
 import com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity;
 import com.example.sztangli.widgedemo.recycleListView.RecycleToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity;
@@ -23,28 +22,30 @@ import com.example.sztangli.widgedemo.video.VideoActivity;
 import com.example.sztangli.widgedemo.weather.WeatherActivity;
 import com.example.sztangli.widgedemo.workmanager.WorkManagerActivity;
 import com.example.sztangli.widgedemo.xunfeiVoice.XunfeiVoiceToolBarActivity;
+import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainToolBarActivity extends BaseToolBarActivity implements MainFragment.MainListener {
+public class MainToolBarActivity extends BaseToolbarActivity implements MainFragment.MainListener {
 
     private String[] widges;
     public static final String TITLE = "title";
 
-    @Override
-    public int getLayoutResId() {
-        return R.layout.activity_base;
-    }
 
     @Override
-    public void initalFragment(Bundle savedInstanceState) {
+    protected void initFragment(Bundle savedInstanceState) {
         // toolbar.setNavigationIcon(null);
         widges = getResources().getStringArray(R.array.widges);
         ArrayList<String> data = new ArrayList<>(Arrays.asList(widges));
         MainFragment mainFragment = MainFragment.newInstance(data);
-        ActivityUtils.addFragmentToActivity(mFragmentManager, mainFragment,
-            R.id.container, MainFragment.TAG);
+        ActivityUtils.addFragmentToActivity(fragmentManager, mainFragment,
+                R.id.container, MainFragment.TAG);
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.activity_base;
     }
 
     @Override
@@ -109,4 +110,8 @@ public class MainToolBarActivity extends BaseToolBarActivity implements MainFrag
         startActivity(intent);
     }
 
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
 }

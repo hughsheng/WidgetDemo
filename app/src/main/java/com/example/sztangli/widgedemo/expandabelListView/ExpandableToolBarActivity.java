@@ -4,21 +4,25 @@ import android.os.Bundle;
 
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.activity.BaseToolBarActivity;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
+import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
-public class ExpandableToolBarActivity extends BaseToolBarActivity {
+public class ExpandableToolBarActivity extends BaseToolbarActivity {
 
     @Override
-    public int getLayoutResId() {
+    protected void initFragment(Bundle savedInstanceState) {
+        setTitleCenter(getIntent().getStringExtra(MainToolBarActivity.TITLE));
+        ExpandableFragment fragment=ExpandableFragment.newInstance();
+        ActivityUtils.addFragmentToActivity(fragmentManager,fragment,R.id.container,ExpandableFragment.TAG);
+    }
+
+    @Override
+    protected int getLayoutID() {
         return R.layout.activity_base;
     }
 
     @Override
-    public void initalFragment(Bundle savedInstanceState) {
-        setTitleCenter(getIntent().getStringExtra(MainToolBarActivity.TITLE));
-       ExpandableFragment fragment=ExpandableFragment.newInstance();
-        ActivityUtils.addFragmentToActivity(mFragmentManager,fragment,R.id.container,ExpandableFragment.TAG);
+    protected int getVariableId() {
+        return 0;
     }
-
 }

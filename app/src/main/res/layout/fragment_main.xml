@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <GridView
-        android:id="@+id/widgeCollection"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="5dp"
-        android:numColumns="4"
-        android:padding="10dp"
-        android:verticalSpacing="5dp">
+        android:orientation="vertical">
 
-    </GridView>
+        <GridView
+            android:id="@+id/widgeCollection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="5dp"
+            android:numColumns="4"
+            android:padding="10dp"
+            android:verticalSpacing="5dp">
+
+        </GridView>
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

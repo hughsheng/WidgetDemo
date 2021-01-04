@@ -47,8 +47,6 @@ dependencies {
     implementation AndroidX.lifeCycleExtension
     implementation AndroidX.lifecycleRuntime
 
-    compileOnly SpinKit.runtime
-
     //retrofit
     compileOnly Retrofit.runtime
     compileOnly Retrofit.gson

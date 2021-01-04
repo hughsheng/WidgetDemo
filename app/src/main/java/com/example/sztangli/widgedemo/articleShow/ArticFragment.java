@@ -1,19 +1,14 @@
 package com.example.sztangli.widgedemo.articleShow;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LevelListDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseFragment;
+import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
 
@@ -35,15 +30,7 @@ public class ArticFragment extends BaseFragment {
         fragment.setArguments(args);
         return fragment;
     }
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_artivcleshow;
-    }
 
-    @Override
-    public void onUnBind() {
-
-    }
 
     @Override
     public void initialization() {
@@ -325,6 +312,16 @@ public class ArticFragment extends BaseFragment {
              "\n" +
              "  </body>\n" +
              "</html>\n",new MImageGetter(article_tv,getContext()),null));
+    }
+
+    @Override
+    protected int getVariableId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLayoutID() {
+        return R.layout.fragment_artivcleshow;
     }
 
 

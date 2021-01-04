@@ -16,7 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 
 /**
- * created by tl
+ * created by com.tl
  * created at 2020/8/24
  * okhttp参数设置接口
  */

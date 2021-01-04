@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <com.example.sztangli.widgedemo.video.views.CustomVideoView
-        android:id="@+id/video_player"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true" />
-</RelativeLayout>
+        android:layout_height="match_parent">
+
+        <com.guyuan.handlein.base.ui.customizeview.fullScreenShowFile.CustomVideoView
+            android:id="@+id/video_player"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</layout>
+

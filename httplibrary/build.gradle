@@ -50,6 +50,6 @@ dependencies {
     compileOnly Glide.annotations
     annotationProcessor Glide.compiler
 
-    compileOnly Rxandroid.rxjava2
+    compileOnly Rxandroid.rxjava3
     compileOnly Rxandroid.rxandroid
 }

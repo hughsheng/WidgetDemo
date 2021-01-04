@@ -3,13 +3,12 @@ package com.example.sztangli.widgedemo.recycleListView;
 import android.content.Context;
 import androidx.annotation.NonNull;
 
+import com.example.easy_recycleview_library.adapter.BaseRecyclerAdapter;
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.adapter.BaseRecyclerAdapter;
-
 import java.util.Collection;
 import java.util.List;
 
-import tl.com.easy_recycleview_library.BaseRecyclerViewHolder;
+import com.example.easy_recycleview_library.adapter.BaseRecyclerViewHolder;
 
 /**
  * Created by sztangli on 2017/8/15.

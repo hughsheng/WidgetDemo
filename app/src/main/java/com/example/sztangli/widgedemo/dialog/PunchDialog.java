@@ -3,12 +3,11 @@ package com.example.sztangli.widgedemo.dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.sztangli.widgedemo.R;
-import com.example.sztangli.widgedemo.base.fragment.BaseDialogFragment;
+import com.guyuan.handlein.base.ui.fragment.BaseDialogFragment;
 
 /**
- * created by tl on 2019-1-7
+ * created by com.tl on 2019-1-7
  */
 public class PunchDialog extends BaseDialogFragment {
 

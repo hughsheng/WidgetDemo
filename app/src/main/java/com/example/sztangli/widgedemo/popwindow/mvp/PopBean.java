@@ -3,7 +3,7 @@ package com.example.sztangli.widgedemo.popwindow.mvp;
 import java.util.List;
 
 /**
- * Created by tl on 2018-8-13
+ * Created by com.tl on 2018-8-13
  */
 public class PopBean {
 
