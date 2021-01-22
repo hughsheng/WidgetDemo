@@ -1,5 +1,6 @@
-package com.guyuan.handlein.base.api;
+package com.example.sztangli.widgedemo.base.api;
 
+import com.example.sztangli.widgedemo.base.app.WidgetDemoApplication;
 import com.guyuan.handlein.base.app.HandleInApplication;
 import retrofit2.Retrofit;
 
@@ -11,5 +12,5 @@ import retrofit2.Retrofit;
  **/
 
 public class BaseModule {
-    public Retrofit retrofit = HandleInApplication.getInstance().getRetrofit();
+    public Retrofit retrofit = WidgetDemoApplication.getInstance().getRetrofit();
 }

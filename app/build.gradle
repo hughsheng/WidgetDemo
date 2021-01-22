@@ -49,7 +49,7 @@ android {
         multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [eventBusIndex: 'com.bandeng.MyEventBusIndex']
+                arguments += [eventBusIndex: 'com.bandeng.MyEventBusIndex']
             }
         }
         //设置支持的so库架构类型
@@ -73,10 +73,10 @@ android {
             buildConfigField "String", "SERVER_URL", properties.getProperty("RELEASE_SERVER_URL")
             applicationIdSuffix ".release" //正式包APPID后缀,在手机上正式包和测试包就能共存了
             signingConfig signingConfigs.config
-            debuggable false
+            debuggable true
             zipAlignEnabled true          //字节码优化
-            shrinkResources true          //检测和删除没有使用的类，字段，方法和属性
-            minifyEnabled true            //代码混淆
+            //shrinkResources true          //检测和删除没有使用的类，字段，方法和属性
+           // minifyEnabled true            //代码混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -335,5 +335,5 @@ dependencies {
     annotationProcessor Glide.compiler
 
     //文件选择
-    compileOnly FilePicker.runtime
+    implementation FilePicker.runtime
 }

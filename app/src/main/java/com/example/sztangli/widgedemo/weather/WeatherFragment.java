@@ -1,12 +1,11 @@
 package com.example.sztangli.widgedemo.weather;
 
 import android.os.Bundle;
+
 import com.example.sztangli.widgedemo.BR;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.databinding.FragmentWeatherBinding;
-import com.example.sztangli.widgedemo.databinding.FragmentWeatherBindingImpl;
 import com.example.sztangli.widgedemo.weather.data.WeatherViewModel;
-import com.guyuan.handlein.base.databinding.FragmentFullScreenImageBinding;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 /**
@@ -26,12 +25,14 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding, Weathe
 
     @Override
     public void initialization() {
-        viewModel.getWeather("深圳");
+        if (viewModel != null) {
+            viewModel.getPoetry();
+        }
     }
 
     @Override
     protected int getVariableId() {
-        return BR.weatherBean;
+        return BR.weatherViewModel;
     }
 
     @Override

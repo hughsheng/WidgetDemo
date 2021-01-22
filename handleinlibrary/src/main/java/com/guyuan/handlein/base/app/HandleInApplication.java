@@ -1,24 +1,13 @@
 package com.guyuan.handlein.base.app;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-
-import com.example.httplibrary.BaseApiServiceModule;
 import com.example.mvvmlibrary.app.BaseApplication;
-import com.guyuan.handlein.base.BuildConfig;
-import com.guyuan.handlein.base.R;
-import com.guyuan.handlein.base.api.ApiServiceModule;
 import com.guyuan.handlein.base.service.BackService;
-import com.guyuan.handlein.base.util.BuglyUtil;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
-import dagger.hilt.android.HiltAndroidApp;
 import retrofit2.Retrofit;
 
 /**
@@ -27,13 +16,13 @@ import retrofit2.Retrofit;
  * @since: 2020/12/28 17:18
  * @company : 固远（深圳）信息技术有限公司
  **/
-@HiltAndroidApp
-public class HandleInApplication extends BaseApplication {
-    @Inject
-    Retrofit retrofit;
-    @Inject
-    @Named(BaseApiServiceModule.WITHOUT_CERTIFICATE)
-    Retrofit debugRetrofit;
+
+public abstract class HandleInApplication extends BaseApplication {
+//    @Inject
+//    Retrofit retrofit;
+//    @Inject
+//    @Named(BaseApiServiceModule.WITHOUT_CERTIFICATE)
+//    Retrofit debugRetrofit;
 
     private static HandleInApplication application;
     //标识测试环境
@@ -73,13 +62,14 @@ public class HandleInApplication extends BaseApplication {
      * @author : tl
      * @description :  根据开发环境获取retrofit
      */
-    public Retrofit getRetrofit() {
-        if (DEBUG.equals(BuildConfig.BUILD_TYPE)) {
-            return debugRetrofit;
-        } else {
-            return retrofit;
-        }
-    }
+    public  abstract Retrofit getRetrofit();
+//    {
+//        if (DEBUG.equals(BuildConfig.BUILD_TYPE)) {
+//            return debugRetrofit;
+//        } else {
+//            return retrofit;
+//        }
+//    }
 
     public DisplayMetrics getDisplayMetrics() {
         return displayMetrics;

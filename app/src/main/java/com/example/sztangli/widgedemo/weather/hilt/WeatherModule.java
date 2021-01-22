@@ -1,7 +1,7 @@
 package com.example.sztangli.widgedemo.weather.hilt;
 
 import com.example.sztangli.widgedemo.weather.api.WeatherApiService;
-import com.guyuan.handlein.base.api.BaseModule;
+import com.example.sztangli.widgedemo.base.api.BaseModule;
 
 import dagger.Module;
 import dagger.Provides;
@@ -16,7 +16,7 @@ import dagger.hilt.android.components.ActivityComponent;
 public class WeatherModule extends BaseModule {
 
     @Provides
-    WeatherApiService getWeatherApiService() {
+    public WeatherApiService getWeatherApiService() {
         return retrofit.create(WeatherApiService.class);
     }
 

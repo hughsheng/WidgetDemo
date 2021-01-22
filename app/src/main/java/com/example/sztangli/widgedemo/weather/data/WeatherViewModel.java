@@ -19,6 +19,15 @@ import kotlin.jvm.internal.PropertyReference0Impl;
 public class WeatherViewModel extends BaseViewModel {
     private WeatherApiService weatherApiService;
     private MutableLiveData<WeatherBean> weatherBeanMLD = new MutableLiveData<>();
+    private MutableLiveData<String> poetryMLD = new MutableLiveData<>();
+
+    public MutableLiveData<WeatherBean> getWeatherBeanMLD() {
+        return weatherBeanMLD;
+    }
+
+    public MutableLiveData<String> getPoetryMLD() {
+        return poetryMLD;
+    }
 
     @ViewModelInject
     public WeatherViewModel(WeatherApiService weatherApiService) {
@@ -29,5 +38,11 @@ public class WeatherViewModel extends BaseViewModel {
     public void getWeather(String city) {
         RxJavaHelper.build(this, weatherApiService.getWeather(city))
                 .getHelper().flow(weatherBeanMLD);
+    }
+
+    //获取随机诗句
+    public void getPoetry() {
+        RxJavaHelper.build(this, weatherApiService.getPoetry())
+                .getHelper().flow(poetryMLD);
     }
 }

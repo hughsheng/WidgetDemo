@@ -35,10 +35,10 @@ dependencies {
     androidTestCompileOnly Depend.androidTestJunit
     androidTestCompileOnly Depend.espressoCore
 
-    compileOnly Hilt.daggerRuntime
-    kapt Hilt.daggerCompiler
-    compileOnly Hilt.viewModule
-    kapt Hilt.compiler
+//    compileOnly Hilt.daggerRuntime
+//    kapt Hilt.daggerCompiler
+//    compileOnly Hilt.viewModule
+//    kapt Hilt.compiler
 
     compileOnly Retrofit.runtime
     compileOnly Retrofit.gson

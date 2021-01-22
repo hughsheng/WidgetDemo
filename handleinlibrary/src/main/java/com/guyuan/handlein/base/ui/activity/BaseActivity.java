@@ -44,9 +44,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-        if (getLayoutID() != 0) {
-            setContentView(getLayoutID());
-        }
         fragmentManager = getSupportFragmentManager();
         ActivityUtils.addActivity(this.getClass().getSimpleName(), this);
         init(savedInstanceState);
@@ -56,7 +53,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         return ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
     }
 
-    protected abstract int getLayoutID();
 
     protected abstract void init(Bundle savedInstanceState);
 
@@ -264,6 +260,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         loadingDialog = AlertDialogUtils.showLoading(this, null, status);
     }
 
+    @Override
     public void hideLoading() {
         if (loadingDialog != null) {
             loadingDialog.dismiss();

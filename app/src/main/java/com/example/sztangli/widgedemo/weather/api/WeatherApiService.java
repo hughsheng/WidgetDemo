@@ -19,8 +19,12 @@ public interface WeatherApiService {
   String PHONE_OS = "PhoneOs";
   String SIGNATURE = "signature";
 
+  String SINGLE_POETRY="singlePoetry";
+  String WEATHER_API="weatherApi";
 
-  @GET(HttpUtil.WEATHERAPI)
+  @GET(WEATHER_API)
   Observable<ResultBean<WeatherBean>> getWeather(@Query(CITY) String city);
 
+  @GET(SINGLE_POETRY)
+  Observable<ResultBean<String>> getPoetry();
 }

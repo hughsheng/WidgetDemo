@@ -11,10 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.Map;
 
 
 import com.example.mvvmlibrary.base.activity.BaseDataBindingActivity;
@@ -50,6 +52,7 @@ public abstract class BaseDataBindingFragment<VB extends ViewDataBinding, VM ext
                         }
 
                         viewModel = new ViewModelProvider(getActivity()).get(cls);//使用自身的viewModel
+                        initLiveData();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -72,6 +75,49 @@ public abstract class BaseDataBindingFragment<VB extends ViewDataBinding, VM ext
         rootView = binding.getRoot();
         binding.setLifecycleOwner(this);
         return rootView;
+    }
+
+
+    protected void initLiveData() {
+        if (viewModel != null && getActivity() instanceof BaseDataBindingActivity) {
+            final BaseDataBindingActivity baseDataBindingActivity = (BaseDataBindingActivity) getActivity();
+            viewModel.getShowLoading().observe(this, new Observer<String>() {
+                @Override
+                public void onChanged(String s) {
+                    baseDataBindingActivity.showLoadingWithTip(getChildFragmentManager(), s);
+                }
+            });
+
+            viewModel.getHideLoading().observe(this, new Observer<Void>() {
+                @Override
+                public void onChanged(Void aVoid) {
+                    baseDataBindingActivity.hideLoading();
+                }
+            });
+
+            viewModel.getTip().observe(this, new Observer<String>() {
+                @Override
+                public void onChanged(String s) {
+                    baseDataBindingActivity.showToastTip(s);
+                }
+            });
+
+            viewModel.getStartActivityEvent().observe(this, new Observer<Map<String, Object>>() {
+                @Override
+                public void onChanged(Map<String, Object> params) {
+                    Class<?> clz = (Class<?>) params.get(BaseViewModel.ParameterField.CLASS);
+                    Bundle bundle = (Bundle) params.get(BaseViewModel.ParameterField.BUNDLE);
+                    baseDataBindingActivity.startActivity(clz, bundle);
+                }
+            });
+
+            viewModel.getFinishEvent().observe(this, new Observer<Void>() {
+                @Override
+                public void onChanged(Void aVoid) {
+                    baseDataBindingActivity.finish();
+                }
+            });
+        }
     }
 
 

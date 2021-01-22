@@ -135,11 +135,11 @@ public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM ext
 
     protected abstract int getVariableId();
 
-    protected abstract void showLoadingWithTip(FragmentManager fragmentManager, String tip);
+    public abstract void showLoadingWithTip(FragmentManager fragmentManager, String tip);
 
-    protected abstract void hideLoading();
+    public abstract void hideLoading();
 
-    protected abstract void showToastTip(String tip);
+    public abstract void showToastTip(String tip);
 
     public VM getViewModel() {
         return viewModel;

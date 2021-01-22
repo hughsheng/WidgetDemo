@@ -22,7 +22,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.guyuan.handlein.base.app.HandleInApplication"
+        android:name=".base.app.WidgetDemoApplication"
         android:allowBackup="false"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"

@@ -1,6 +1,7 @@
-package com.guyuan.handlein.base.api;
+package com.example.sztangli.widgedemo.base.api;
 
 import android.content.Context;
+
 import com.example.httplibrary.BaseApiServiceModule;
 import com.example.httplibrary.HttpSettingImpl;
 import com.example.httplibrary.interceptor.CacheInterceptor;
@@ -11,12 +12,14 @@ import com.guyuan.handlein.base.BuildConfig;
 import com.guyuan.handlein.base.api.interceptor.HeadInterceptor;
 
 import java.security.KeyStore;
+
 import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
+
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
@@ -38,7 +41,9 @@ import retrofit2.Retrofit;
 public class ApiServiceModule extends BaseApiServiceModule implements HttpSettingImpl {
 
     public ApiServiceModule() {
-        mBaseUrl = "https://www.apiopen.top/";
+        mDebugCer = "cer/dear.cer";
+        mReleaseCer = "cer/dear.cer";
+        mBaseUrl = "https://api.apiopen.top/";
     }
 
     @Override

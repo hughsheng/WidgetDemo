@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
 }
-apply plugin: 'dagger.hilt.android.plugin'
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -39,9 +39,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    compileOnly Android.meteria
-    compileOnly AndroidX.appcompat
-    compileOnly AndroidX.constraintlayout
+    implementation Android.meteria
+    implementation AndroidX.appcompat
+    implementation AndroidX.constraintlayout
 
     testCompileOnly Depend.junit
     androidTestCompileOnly Depend.androidTestJunit
@@ -65,10 +65,10 @@ dependencies {
     compileOnly Retrofit.logging
 
     //hilt
-    compileOnly Hilt.daggerRuntime
-    kapt Hilt.daggerCompiler
-    compileOnly Hilt.viewModule
-    kapt Hilt.compiler
+//    compileOnly Hilt.daggerRuntime
+//    kapt Hilt.daggerCompiler
+//    compileOnly Hilt.viewModule
+//    kapt Hilt.compiler
 
     //bugly
     compileOnly Bugly.upgrade

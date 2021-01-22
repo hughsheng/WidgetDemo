@@ -18,7 +18,6 @@ import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
-import javax.inject.Named;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
@@ -287,7 +286,8 @@ public class BaseApiServiceModule {
 //    @Singleton
 //    @Named(WITHOUT_CERTIFICATE)
     protected OkHttpClient.Builder providesDebugOkHttpClientBuilder(
-            @Named(WITHOUT_CERTIFICATE) SSLSocketFactory sslSocketFactory,
+           // @Named(WITHOUT_CERTIFICATE)
+                    SSLSocketFactory sslSocketFactory,
             X509TrustManager x509TrustManager,
             HttpLoggingInterceptor loggingInterceptor,
             HostnameVerifier homeNameVerifier,
@@ -320,7 +320,8 @@ public class BaseApiServiceModule {
     //    @Provides
 //    @Singleton
 //    @Named(WITHOUT_CERTIFICATE)
-    protected Retrofit providesDebugRetrofit(@Named(WITHOUT_CERTIFICATE) OkHttpClient.Builder okHttpClientBuilder) {
+    protected Retrofit providesDebugRetrofit(//@Named(WITHOUT_CERTIFICATE)
+                                                     OkHttpClient.Builder okHttpClientBuilder) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())        //配置Gson
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //配置rxjava

@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="weatherBean"
-            type="com.example.sztangli.widgedemo.weather.data.WeatherBean" />
+            name="weatherViewModel"
+            type="com.example.sztangli.widgedemo.weather.data.WeatherViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,24 +22,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:gravity="center"
-            tools:text="城市"
-            android:text='@{"城市:" + weatherBean.getCity()}'
+            android:text='@{"城市:" +weatherViewModel.getWeatherBeanMLD().city}'
             app:layout_constraintEnd_toStartOf="@+id/aqi_tv"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="城市" />
 
         <TextView
             android:id="@+id/aqi_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text='@{"api:" + weatherBean.getAqi()}'
-            tools:text="api"
+            android:text='@{"api:" + weatherViewModel.getWeatherBeanMLD().aqi}'
             app:layout_constraintBottom_toBottomOf="@+id/city_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/city_tv" />
+            app:layout_constraintStart_toEndOf="@+id/city_tv"
+            tools:text="api" />
 
         <TextView
             android:id="@+id/degree_tv"
@@ -47,22 +47,37 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            tools:text="温度"
-            android:text='@{"温度:" + weatherBean.getWendu()}'
+            android:text='@{"温度:" + weatherViewModel.getWeatherBeanMLD().wendu}'
             app:layout_constraintEnd_toStartOf="@+id/tip_tv"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/city_tv"
+            tools:text="温度" />
 
         <TextView
             android:id="@+id/tip_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            tools:text="友情提示"
-            android:text='@{"友情提示:" + weatherBean.getGanmao()}'
+            android:text='@{"友情提示:" + weatherViewModel.getWeatherBeanMLD().ganmao}'
             app:layout_constraintBaseline_toBaselineOf="@+id/degree_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/degree_tv" />
+            app:layout_constraintStart_toEndOf="@+id/degree_tv"
+            tools:text="友情提示" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="10dp"
+            android:text="@{weatherViewModel.getPoetryMLD()}"
+            tools:text="321312312"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/degree_tv" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
