@@ -39,9 +39,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation Android.meteria
-    implementation AndroidX.appcompat
-    implementation AndroidX.constraintlayout
+    compileOnly Android.meteria
+    compileOnly AndroidX.appcompat
+    compileOnly AndroidX.constraintlayout
+    compileOnly AndroidX.lifeCycleExtension
+    compileOnly AndroidX.lifecycleRuntime
+    compileOnly AndroidX.lifeCycleKT
+
 
     testCompileOnly Depend.junit
     androidTestCompileOnly Depend.androidTestJunit

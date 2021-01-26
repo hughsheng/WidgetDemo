@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.databinding.FragmentXunfeivoiceBinding;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
 import butterknife.BindView;
@@ -13,14 +16,8 @@ import butterknife.BindView;
  * Created by sztangli on 2017/8/31.
  */
 
-public class XunfeiVoiceFragment extends BaseFragment implements View.OnClickListener {
+public class XunfeiVoiceFragment extends BaseFragment<FragmentXunfeivoiceBinding, BaseViewModel> implements View.OnClickListener {
 
-    @BindView(R.id.resultText)
-    EditText resultText;
-    @BindView(R.id.start_recognize_btn)
-    Button start;
-    @BindView(R.id.stop_recognize_btn)
-    Button stop;
     public static final String TAG = "XunfeiVoiceFragment";
 
     public static XunfeiVoiceFragment newInstance() {
@@ -32,8 +29,8 @@ public class XunfeiVoiceFragment extends BaseFragment implements View.OnClickLis
 
     @Override
     public void initialization() {
-        start.setOnClickListener(this);
-        stop.setOnClickListener(this);
+        binding.startRecognizeBtn.setOnClickListener(this);
+        binding.stopRecognizeBtn.setOnClickListener(this);
     }
 
     @Override

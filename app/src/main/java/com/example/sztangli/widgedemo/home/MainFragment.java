@@ -12,6 +12,8 @@ import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.databinding.FragmentMainBinding;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import butterknife.BindView;
 
@@ -35,7 +37,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding, BaseViewMode
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NotNull Context context) {
         listener = (MainListener) context;
         super.onAttach(context);
     }

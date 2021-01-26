@@ -3,14 +3,17 @@ package com.example.mvvmlibrary.base.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -36,32 +39,28 @@ public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM ext
     }
 
     private void initDataBinding() {
-        if (getLayoutID() != 0) {
-            binding = DataBindingUtil.setContentView(this, getLayoutID());
-        }
         try {
-            Class modelClass;
             Type type = getClass().getGenericSuperclass();
-            if (type instanceof ParameterizedType) {
-                Type[] types = ((ParameterizedType) type).getActualTypeArguments();
-                if (types.length > 1) {
-                    modelClass = (Class<VM>) ((ParameterizedType) type).getActualTypeArguments()[1];
-                } else {//如果没有指定viewmodel泛型,默认使用BaseViewModel
-                    modelClass = BaseViewModel.class;
+            Type[] types = ((ParameterizedType) type).getActualTypeArguments();
+            if (types.length > 1) {
+                if (getLayoutID() != 0) {
+                    binding = DataBindingUtil.setContentView(this, getLayoutID());
+                }
+                Class<VM> modelClass;
+                modelClass = (Class<VM>) ((ParameterizedType) type).getActualTypeArguments()[1];
+                viewModel = (VM) getDefaultViewModelProviderFactory().create(modelClass);
+                //把viewmodel绑定到xml中
+                if (getVariableId() != 0) {
+                    initLiveData();
+                    binding.setVariable(getVariableId(), viewModel);
+                    binding.setLifecycleOwner(this);
                 }
             } else {
-                //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
+                throw new Exception("未设置泛型");
             }
-            viewModel = (VM) getDefaultViewModelProviderFactory().create(modelClass);
-            initLiveData();
-        } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
 
-        if (getVariableId() != 0) {
-            binding.setVariable(getVariableId(), viewModel);
-            binding.setLifecycleOwner(this);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -119,14 +118,6 @@ public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM ext
             intent.putExtras(bundle);
         }
         startActivity(intent);
-    }
-
-    public void setViewModelToFragment(boolean isSetViewModelToFragment) {
-        this.isSetViewModelToFragment = isSetViewModelToFragment;
-    }
-
-    public boolean isSetViewModelToFragment() {
-        return isSetViewModelToFragment;
     }
 
     protected abstract void initData(Bundle savedInstanceState);

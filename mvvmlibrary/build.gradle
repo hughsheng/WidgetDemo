@@ -46,6 +46,7 @@ dependencies {
 
     implementation AndroidX.lifeCycleExtension
     implementation AndroidX.lifecycleRuntime
+    implementation AndroidX.lifeCycleKT
 
     //retrofit
     compileOnly Retrofit.runtime

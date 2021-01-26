@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.BuildConfig;
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.databinding.FragmentPayBinding;
 import com.example.sztangli.widgedemo.pay.alipay.AliPayUtil;
 import com.example.sztangli.widgedemo.pay.alipay.PayResult;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
@@ -24,15 +26,8 @@ import java.util.Map;
 
 import butterknife.BindView;
 
-public class PayFragment extends BaseFragment implements CompoundButton.OnCheckedChangeListener,
+public class PayFragment extends BaseFragment<FragmentPayBinding, BaseViewModel> implements CompoundButton.OnCheckedChangeListener,
         AliPayUtil.AliPayResponseListener {
-
-    @BindView(R.id.rbtn_wx)
-    AppCompatRadioButton rbtn_wx;
-    @BindView(R.id.rbtn_zfb)
-    AppCompatRadioButton rbtn_zfb;
-    @BindView(R.id.pay_btn)
-    Button pay_btn;
 
     public static final String TAG = "PayFragment";
     private AliPayUtil aliPayUtil;
@@ -54,12 +49,12 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
         aliPayUtil.setPaySuccessListener(this);
         api = WXAPIFactory.createWXAPI(getContext(), BuildConfig.WEIXIN_KEY);
         api.registerApp(BuildConfig.WEIXIN_KEY);
-        rbtn_wx.setOnCheckedChangeListener(this);
-        rbtn_zfb.setOnCheckedChangeListener(this);
-        pay_btn.setOnClickListener(new View.OnClickListener() {
+        binding.rbtnWx.setOnCheckedChangeListener(this);
+        binding.rbtnZfb.setOnCheckedChangeListener(this);
+        binding.payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rbtn_wx.isChecked()) {//微信支付
+                if (binding.rbtnWx.isChecked()) {//微信支付
                     PayReq request = new PayReq();
                     request.appId = BuildConfig.WEIXIN_KEY;
                     request.partnerId = "1900000109";
@@ -69,8 +64,8 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
                     request.timeStamp = "1398746574";
                     request.sign = "7FFECB600D7157C5AA49810D2D8F28BC2811827B";
                     api.sendReq(request);
-                } else if (rbtn_zfb.isChecked()) {//支付宝支付
-                    aliPayUtil.payV2(rbtn_zfb);
+                } else if (binding.rbtnZfb.isChecked()) {//支付宝支付
+                    aliPayUtil.payV2(binding.rbtnZfb);
                 }
             }
         });
@@ -81,14 +76,14 @@ public class PayFragment extends BaseFragment implements CompoundButton.OnChecke
         switch (buttonView.getId()) {
             case R.id.rbtn_wx:
                 if (isChecked) {
-                    rbtn_zfb.setChecked(false);
+                    binding.rbtnZfb.setChecked(false);
                 }
 
                 break;
 
             case R.id.rbtn_zfb:
                 if (isChecked) {
-                    rbtn_wx.setChecked(false);
+                    binding.rbtnWx.setChecked(false);
                 }
                 break;
         }

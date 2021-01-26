@@ -4,9 +4,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.databinding.FragmentJzVideoBinding;
 import com.example.sztangli.widgedemo.video.views.CustomVideoView;
+import com.guyuan.handlein.base.databinding.ActivityImageviewBinding;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
+import com.example.sztangli.widgedemo.R.id.*;
 
 import butterknife.BindView;
 import cn.jzvd.Jzvd;
@@ -14,12 +18,10 @@ import cn.jzvd.Jzvd;
 /**
  * created by com.tl on 2019-1-22
  */
-public class VideoJZFragment extends BaseFragment {
+public class VideoJZFragment extends BaseFragment<FragmentJzVideoBinding, BaseViewModel> {
 
     public static final String TAG = "VideoJZFragment";
 
-    @BindView(R.id.video_player)
-    CustomVideoView video_player;
 
     public static VideoJZFragment newInstance() {
 
@@ -43,10 +45,10 @@ public class VideoJZFragment extends BaseFragment {
     @Override
     public void initialization() {
         String url = "https://172.10.5.25:8010/admin/file/image?fileid=159254770571596494";
-        video_player.setUp(url, "测试标题", Jzvd.SCREEN_WINDOW_NORMAL);
+       binding.videoPlayer.setUp(url, "测试标题", Jzvd.SCREEN_WINDOW_NORMAL);
         Glide.with(this)
                 .load("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640")
-                .into(video_player.thumbImageView);
+                .into(binding.videoPlayer.thumbImageView);
     }
 
     @Override

@@ -76,7 +76,7 @@ android {
             debuggable true
             zipAlignEnabled true          //字节码优化
             //shrinkResources true          //检测和删除没有使用的类，字段，方法和属性
-           // minifyEnabled true            //代码混淆
+            // minifyEnabled true            //代码混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -167,6 +167,10 @@ android {
         dataBinding = true
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     compileOptions {
 
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -251,10 +255,13 @@ dependencies {
 
     //android官方支持库
     implementation AndroidX.appcompat
-    implementation AndroidX.appcompat
     implementation AndroidX.recyclerview
     implementation Android.meteria
     implementation AndroidX.constraintlayout
+    implementation AndroidX.lifecycleRuntime
+    implementation AndroidX.lifeCycleKT
+    implementation AndroidX.lifeCycleExtension
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21'
 
 
     //android官方测试库

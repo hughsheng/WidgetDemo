@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.guyuan.handlein.base.ui.customizeview.fullScreenShowFile.CustomVideoView
+        <com.example.sztangli.widgedemo.video.views.CustomVideoView
             android:id="@+id/video_player"
             android:layout_width="match_parent"
             android:layout_height="200dp"

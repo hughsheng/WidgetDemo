@@ -7,10 +7,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.databinding.FragmentMotionBinding;
 import com.example.sztangli.widgedemo.home.WidgeAdapter;
 import com.example.sztangli.widgedemo.utils.ConstanceValue;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,12 +29,7 @@ import butterknife.BindView;
  * @company : 固远（深圳）信息技术有限公司
  **/
 
-public class MotionLayoutFragment extends BaseFragment {
-
-    @BindView(R.id.container)
-    FrameLayout container;
-    @BindView(R.id.rg)
-    GridView rg;
+public class MotionLayoutFragment extends BaseFragment<FragmentMotionBinding, BaseViewModel> {
 
     public static final String TAG = "MotionLayoutFragment";
     private String currentType;
@@ -45,7 +45,7 @@ public class MotionLayoutFragment extends BaseFragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NotNull Context context) {
         super.onAttach(context);
         animationToolBarActivity = (AnimationToolBarActivity) context;
     }
@@ -68,8 +68,8 @@ public class MotionLayoutFragment extends BaseFragment {
         setContent(R.layout.container_motion_button);
         animationToolBarActivity.setTitleCenter(currentType);
         WidgeAdapter adapter = new WidgeAdapter(getContext(), motionList);
-        rg.setAdapter(adapter);
-        rg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        binding.rg.setAdapter(adapter);
+        binding.rg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String type = motionList.get(position);
@@ -85,7 +85,7 @@ public class MotionLayoutFragment extends BaseFragment {
 
     private void setMotion(String type) {
         animationToolBarActivity.setTitleCenter(type);
-        container.removeAllViews();
+        binding.container.removeAllViews();
         switch (type) {
             case ConstanceValue.MOTION_MOVE:
                 setContent(R.layout.container_motion_button);
@@ -160,6 +160,6 @@ public class MotionLayoutFragment extends BaseFragment {
     }
 
     private void setContent(int layoutID) {
-        LayoutInflater.from(getContext()).inflate(layoutID, container, true);
+        LayoutInflater.from(getContext()).inflate(layoutID, binding.container, true);
     }
 }

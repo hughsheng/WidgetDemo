@@ -10,12 +10,11 @@
         android:background="#0050B4"
         android:orientation="vertical">
 
-        <com.example.mvvmlibrary.customizeview.StatusBarView
+        <com.guyuan.handlein.base.ui.customizeview.StatusBarView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             style="@style/ToolbarStyle"
             android:layout_width="match_parent"
             android:layout_height="44dp"

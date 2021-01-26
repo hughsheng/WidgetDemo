@@ -5,15 +5,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -36,73 +39,67 @@ public abstract class BaseDataBindingFragment<VB extends ViewDataBinding, VM ext
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        BaseDataBindingActivity fragmentActivity = (BaseDataBindingActivity) getActivity();
-        if (fragmentActivity != null) {
-            if (fragmentActivity.isSetViewModelToFragment()) {
-                viewModel = (VM) fragmentActivity.getViewModel();//使用activity的viewModel
-            } else {
-                try {
-                    Type genericSuperclass = getClass().getGenericSuperclass();
-                    if (genericSuperclass instanceof ParameterizedType) {
-                        Class<VM> cls;
-                        if (((ParameterizedType) genericSuperclass).getActualTypeArguments().length == 3) {
-                            cls = (Class<VM>) ((ParameterizedType) genericSuperclass).getActualTypeArguments()[2];
-                        } else {
-                            cls = (Class<VM>) ((ParameterizedType) genericSuperclass).getActualTypeArguments()[1];
-                        }
 
-                        viewModel = new ViewModelProvider(getActivity()).get(cls);//使用自身的viewModel
-                        initLiveData();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-        }
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (getLayoutID() != 0) {
-            binding = DataBindingUtil.inflate(inflater, getLayoutID(), container, false);
+        if (getActivity() != null) {
+            try {
+                Type genericSuperclass = getClass().getGenericSuperclass();
+                Type[] types = ((ParameterizedType) genericSuperclass).getActualTypeArguments();
+                if (types.length > 1) {
+                    Class<VM> cls = (Class<VM>) types[1];
+                    viewModel = new ViewModelProvider(getActivity()).get(cls);
+                    initLiveData();
+                    if (getLayoutID() != 0) {
+                        binding = DataBindingUtil.inflate(inflater, getLayoutID(), container, false);
+                    }
+                    if (viewModel != null && getVariableId() != 0) {
+                        binding.setVariable(getVariableId(), viewModel);
+                    }
+                    rootView = binding.getRoot();
+                    binding.setLifecycleOwner(this);
+
+                } else {
+                    throw new Exception("未设置泛型");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        if (viewModel != null && getVariableId() != 0) {
-            binding.setVariable(getVariableId(), viewModel);
-        }
-        rootView = binding.getRoot();
-        binding.setLifecycleOwner(this);
+
         return rootView;
     }
 
 
     protected void initLiveData() {
-        if (viewModel != null && getActivity() instanceof BaseDataBindingActivity) {
-            final BaseDataBindingActivity baseDataBindingActivity = (BaseDataBindingActivity) getActivity();
-            viewModel.getShowLoading().observe(this, new Observer<String>() {
+        FragmentActivity activity = getActivity();
+        if (viewModel != null && activity instanceof BaseDataBindingActivity) {
+            final BaseDataBindingActivity baseDataBindingActivity = (BaseDataBindingActivity) activity;
+            viewModel.getShowLoading().observe(getViewLifecycleOwner(), new Observer<String>() {
                 @Override
                 public void onChanged(String s) {
                     baseDataBindingActivity.showLoadingWithTip(getChildFragmentManager(), s);
                 }
             });
 
-            viewModel.getHideLoading().observe(this, new Observer<Void>() {
+            viewModel.getHideLoading().observe(getViewLifecycleOwner(), new Observer<Void>() {
                 @Override
                 public void onChanged(Void aVoid) {
                     baseDataBindingActivity.hideLoading();
                 }
             });
 
-            viewModel.getTip().observe(this, new Observer<String>() {
+            viewModel.getTip().observe(getViewLifecycleOwner(), new Observer<String>() {
                 @Override
                 public void onChanged(String s) {
                     baseDataBindingActivity.showToastTip(s);
                 }
             });
 
-            viewModel.getStartActivityEvent().observe(this, new Observer<Map<String, Object>>() {
+            viewModel.getStartActivityEvent().observe(getViewLifecycleOwner(), new Observer<Map<String, Object>>() {
                 @Override
                 public void onChanged(Map<String, Object> params) {
                     Class<?> clz = (Class<?>) params.get(BaseViewModel.ParameterField.CLASS);
@@ -111,7 +108,7 @@ public abstract class BaseDataBindingFragment<VB extends ViewDataBinding, VM ext
                 }
             });
 
-            viewModel.getFinishEvent().observe(this, new Observer<Void>() {
+            viewModel.getFinishEvent().observe(getViewLifecycleOwner(), new Observer<Void>() {
                 @Override
                 public void onChanged(Void aVoid) {
                     baseDataBindingActivity.finish();
@@ -124,11 +121,14 @@ public abstract class BaseDataBindingFragment<VB extends ViewDataBinding, VM ext
     @Override
     public void onDestroy() {
         super.onDestroy();
-        binding.unbind();
+        if (binding != null) {
+            binding.unbind();
+        }
     }
 
     //绑定viewModel
     protected abstract int getVariableId();
 
     protected abstract int getLayoutID();
+
 }

@@ -1,4 +1,4 @@
-package com.example.mvvmlibrary.customizeview;
+package com.guyuan.handlein.base.ui.customizeview;
 
 import android.content.Context;
 import android.content.res.Resources;

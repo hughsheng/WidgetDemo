@@ -22,7 +22,7 @@ import com.example.mvvmlibrary.base.data.BaseViewModel;
  * created by com.tl
  * created at 2020/8/12
  */
-public abstract class BaseFragment<VB extends ViewDataBinding, VM extends BaseViewModel> extends
+public abstract class BaseFragment<VB extends ViewDataBinding , VM extends BaseViewModel> extends
         BaseDataBindingFragment<VB, VM> {
 
     protected AlertDialog loadingDialog;

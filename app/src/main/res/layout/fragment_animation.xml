@@ -1,137 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/animation_iv"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="64dp"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="move"
-        android:textColor="@color/white"
-        app:layout_constraintDimensionRatio="3:1"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5" />
+        <TextView
+            android:id="@+id/animation_iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="move"
+            android:textColor="@color/white"
+            app:layout_constraintDimensionRatio="3:1"
 
-    <Button
-        android:id="@+id/rotate_bt"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:text="旋转"
-        app:layout_constraintEnd_toStartOf="@+id/transparency_bt"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
 
-    <Button
-        android:id="@+id/transparency_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="透明度"
-        app:layout_constraintBottom_toBottomOf="@+id/rotate_bt"
-        app:layout_constraintEnd_toStartOf="@+id/crop_bt"
-        app:layout_constraintStart_toEndOf="@+id/rotate_bt" />
+        <Button
+            android:id="@+id/rotate_bt"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:text="旋转"
+            app:layout_constraintEnd_toStartOf="@+id/transparency_bt"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/crop_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="大小"
-        app:layout_constraintBottom_toBottomOf="@+id/transparency_bt"
-        app:layout_constraintEnd_toStartOf="@+id/shift_bt"
-        app:layout_constraintStart_toEndOf="@+id/transparency_bt" />
+        <Button
+            android:id="@+id/transparency_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="透明度"
+            app:layout_constraintBottom_toBottomOf="@+id/rotate_bt"
+            app:layout_constraintEnd_toStartOf="@+id/crop_bt"
+            app:layout_constraintStart_toEndOf="@+id/rotate_bt" />
 
-    <Button
-        android:id="@+id/shift_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="渐变显示"
-        app:layout_constraintBottom_toBottomOf="@+id/crop_bt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/crop_bt" />
+        <Button
+            android:id="@+id/crop_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大小"
+            app:layout_constraintBottom_toBottomOf="@+id/transparency_bt"
+            app:layout_constraintEnd_toStartOf="@+id/shift_bt"
+            app:layout_constraintStart_toEndOf="@+id/transparency_bt" />
 
-    <Button
-        android:id="@+id/inandout_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="显示"
-        app:layout_constraintStart_toStartOf="@+id/rotate_bt"
-        app:layout_constraintTop_toBottomOf="@+id/rotate_bt" />
+        <Button
+            android:id="@+id/shift_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="渐变显示"
+            app:layout_constraintBottom_toBottomOf="@+id/crop_bt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/crop_bt" />
 
-    <Button
-        android:id="@+id/scene_change_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="场景切换"
-        app:layout_constraintBottom_toBottomOf="@+id/inandout_bt"
-        app:layout_constraintStart_toStartOf="@+id/transparency_bt" />
+        <Button
+            android:id="@+id/inandout_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="显示"
+            app:layout_constraintStart_toStartOf="@+id/rotate_bt"
+            app:layout_constraintTop_toBottomOf="@+id/rotate_bt" />
 
-    <Button
-        android:id="@+id/jump_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="跳转"
-        app:layout_constraintBottom_toBottomOf="@+id/scene_change_bt"
-        app:layout_constraintStart_toStartOf="@+id/crop_bt" />
+        <Button
+            android:id="@+id/scene_change_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="场景切换"
+            app:layout_constraintBottom_toBottomOf="@+id/inandout_bt"
+            app:layout_constraintStart_toStartOf="@+id/transparency_bt" />
 
-    <Button
-        android:id="@+id/calculate_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="计算"
-        app:layout_constraintBottom_toBottomOf="@+id/jump_bt"
-        app:layout_constraintStart_toStartOf="@+id/shift_bt" />
+        <Button
+            android:id="@+id/jump_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转"
+            app:layout_constraintBottom_toBottomOf="@+id/scene_change_bt"
+            app:layout_constraintStart_toStartOf="@+id/crop_bt" />
 
-    <Button
-        android:id="@+id/show_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="显示"
-        app:layout_constraintBottom_toTopOf="@+id/rotate_bt"
-        app:layout_constraintEnd_toStartOf="@+id/hide_btn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/calculate_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="计算"
+            app:layout_constraintBottom_toBottomOf="@+id/jump_bt"
+            app:layout_constraintStart_toStartOf="@+id/shift_bt" />
 
-    <Button
-        android:id="@+id/hide_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="隐藏"
-        app:layout_constraintBottom_toBottomOf="@+id/show_btn"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/show_btn" />
+        <Button
+            android:id="@+id/show_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="显示"
+            app:layout_constraintBottom_toTopOf="@+id/rotate_bt"
+            app:layout_constraintEnd_toStartOf="@+id/hide_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/hide_btn"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/hide_btn" />
+        <Button
+            android:id="@+id/hide_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隐藏"
+            app:layout_constraintBottom_toBottomOf="@+id/show_btn"
+            app:layout_constraintEnd_toStartOf="@+id/button4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/show_btn" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/hide_btn"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/hide_btn" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

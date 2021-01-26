@@ -34,7 +34,7 @@ object Versions {
     const val hit = "2.28-alpha"
     const val hitViewModule = "1.0.0-alpha01"
     const val appStartup = "1.0.0-alpha01"
-    const val material = "1.2.0-alpha06"
+    const val material = "1.2.1"
     const val lifeCycle = "2.2.0"
     const val multidex = "2.0.1"
     const val zxing = "3.3.3"

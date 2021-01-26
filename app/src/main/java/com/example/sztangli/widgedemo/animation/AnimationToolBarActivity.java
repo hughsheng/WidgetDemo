@@ -7,15 +7,17 @@ import android.view.Gravity;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
+import com.guyuan.handlein.base.databinding.ActivityWithToolbarBinding;
 import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
 /**
  * Created by com.tl on 2018-9-25
  */
-public class AnimationToolBarActivity extends BaseToolbarActivity {
+public class AnimationToolBarActivity extends BaseToolbarActivity<ActivityWithToolbarBinding, BaseViewModel> {
 
   private AnimationFragment animationFragment;
   private Fragment motionLayoutFragment;
@@ -32,13 +34,13 @@ public class AnimationToolBarActivity extends BaseToolbarActivity {
     setTitleCenter(getIntent().getStringExtra(MainToolBarActivity.TITLE));
     //  animationFragment = AnimationFragment.newInstance();
     motionLayoutFragment = MotionLayoutFragment.newInstance();
-    ActivityUtils.addFragmentToActivity(fragmentManager, motionLayoutFragment, R.id.container,
+    ActivityUtils.addFragmentToActivity(fragmentManager, motionLayoutFragment, R.id.fragment_container,
             AnimationFragment.TAG);
   }
 
   @Override
   protected int getLayoutID() {
-    return R.layout.activity_base;
+    return R.layout.activity_with_toolbar;
   }
 
   @Override

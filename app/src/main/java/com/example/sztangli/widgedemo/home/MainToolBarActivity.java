@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.animation.AnimationToolBarActivity;
 import com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity;
@@ -22,12 +23,13 @@ import com.example.sztangli.widgedemo.video.VideoActivity;
 import com.example.sztangli.widgedemo.weather.WeatherActivity;
 import com.example.sztangli.widgedemo.workmanager.WorkManagerActivity;
 import com.example.sztangli.widgedemo.xunfeiVoice.XunfeiVoiceToolBarActivity;
+import com.guyuan.handlein.base.databinding.ActivityWithToolbarBinding;
 import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainToolBarActivity extends BaseToolbarActivity implements MainFragment.MainListener {
+public class MainToolBarActivity extends BaseToolbarActivity<ActivityWithToolbarBinding, BaseViewModel> implements MainFragment.MainListener {
 
     private String[] widges;
     public static final String TITLE = "title";
@@ -40,12 +42,12 @@ public class MainToolBarActivity extends BaseToolbarActivity implements MainFrag
         ArrayList<String> data = new ArrayList<>(Arrays.asList(widges));
         MainFragment mainFragment = MainFragment.newInstance(data);
         ActivityUtils.addFragmentToActivity(fragmentManager, mainFragment,
-                R.id.container, MainFragment.TAG);
+                R.id.fragment_container, MainFragment.TAG);
     }
 
     @Override
     protected int getLayoutID() {
-        return R.layout.activity_base;
+        return R.layout.activity_with_toolbar;
     }
 
     @Override
@@ -53,7 +55,7 @@ public class MainToolBarActivity extends BaseToolbarActivity implements MainFrag
         switch (type) {
             case ConstanceValue.SNACKBAR:
                 SnackbarUtil.showColorbar(getRootView(), "test",
-                    Color.BLACK, Color.RED, Color.YELLOW);
+                        Color.BLACK, Color.RED, Color.YELLOW);
                 break;
             case ConstanceValue.EXPANDABLELISTVIEW:
                 show(ExpandableToolBarActivity.class, ConstanceValue.EXPANDABLELISTVIEW);
