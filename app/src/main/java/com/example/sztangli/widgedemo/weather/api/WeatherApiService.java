@@ -1,9 +1,7 @@
 package com.example.sztangli.widgedemo.weather.api;
 
 import com.example.httplibrary.bean.ResultBean;
-import com.example.sztangli.widgedemo.utils.HttpUtil;
 import com.example.sztangli.widgedemo.weather.data.WeatherBean;
-
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
