@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -28,8 +29,6 @@ import com.example.mvvmlibrary.base.data.BaseViewModel;
 public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
     protected VB binding;
     protected VM viewModel;
-    private boolean isSetViewModelToFragment = true;//默认让加载的fragment使用activity的viewModel
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM ext
                 }
                 Class<VM> modelClass;
                 modelClass = (Class<VM>) ((ParameterizedType) type).getActualTypeArguments()[1];
-                viewModel = (VM) getDefaultViewModelProviderFactory().create(modelClass);
+                viewModel = new ViewModelProvider(this).get(modelClass);
                 //把viewmodel绑定到xml中
                 if (getVariableId() != 0) {
                     initLiveData();

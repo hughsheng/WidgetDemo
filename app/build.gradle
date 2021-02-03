@@ -258,9 +258,6 @@ dependencies {
     implementation AndroidX.recyclerview
     implementation Android.meteria
     implementation AndroidX.constraintlayout
-    implementation AndroidX.lifecycleRuntime
-    implementation AndroidX.lifeCycleKT
-    implementation AndroidX.lifeCycleExtension
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21'
 
 

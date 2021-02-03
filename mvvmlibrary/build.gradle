@@ -44,9 +44,9 @@ dependencies {
 //    kapt Hilt.compiler
 
 
-    implementation AndroidX.lifeCycleExtension
-    implementation AndroidX.lifecycleRuntime
-    implementation AndroidX.lifeCycleKT
+//    implementation AndroidX.lifeCycleExtension
+//    implementation AndroidX.lifecycleRuntime
+//    implementation AndroidX.lifeCycleKT
 
     //retrofit
     compileOnly Retrofit.runtime

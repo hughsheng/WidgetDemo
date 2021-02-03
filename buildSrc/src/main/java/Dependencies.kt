@@ -8,7 +8,7 @@ object BuildConfig {
 object Versions {
     const val retrofit = "2.9.0"
     const val okhttpLogging = "3.9.0"
-    const val appcompat = "1.2.0"
+    const val appcompat = "1.3.0-beta01"
     const val coreKtx = "1.3.0"
     const val constraintlayout = "2.0.4"
     const val paging = "3.0.0-alpha02"

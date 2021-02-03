@@ -29,7 +29,7 @@ public class BaseViewModel extends ViewModel {
     /**
      * 是否显示loading by Leo
      */
-    public MutableLiveData<Boolean> isShowLoading = new MutableLiveData<>(false);
+    public MutableLiveData<Boolean> isShowLoading = new MutableLiveData<>();
 
     public SingleLiveEvent<String> getShowLoading() {
         showLoading = createLiveData(showLoading);
