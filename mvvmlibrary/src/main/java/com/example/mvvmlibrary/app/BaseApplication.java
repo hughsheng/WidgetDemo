@@ -3,9 +3,18 @@ package com.example.mvvmlibrary.app;
 import android.app.Application;
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.WindowManager;
+
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ProcessLifecycleOwner;
+
 import java.util.List;
 import java.util.Map;
+
 import com.example.mvvmlibrary.util.SharedPreferencesUtils;
 
 /**
@@ -16,10 +25,11 @@ public class BaseApplication extends Application {
     private int width = 0, height = 0;
     private SharedPreferencesUtils sharedPreferencesUtils;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
+        //注册App生命周期观察者
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(new ApplicationLifecycleObserver());
         sharedPreferencesUtils = SharedPreferencesUtils.getInstance(this);
     }
 
@@ -46,6 +56,30 @@ public class BaseApplication extends Application {
     }
 
 
+    private static class ApplicationLifecycleObserver implements LifecycleObserver {
+        @OnLifecycleEvent(Lifecycle.Event.ON_START)
+        private void onAppForeground() {
+            onAppForeground();
+            Log.i("appState", "Foreground");
+        }
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+        private void onAppBackground() {
+            onAppBackground();
+            Log.i("appState", "Background");
+        }
+    }
+
+
+    public void onForeground() {
+    }
+
+    ;
+
+    public void onBackground() {
+    }
+
+    ;
 
     /**
      * 采用andriod本身数据格式缓存数据

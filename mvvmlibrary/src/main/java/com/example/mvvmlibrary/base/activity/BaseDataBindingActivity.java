@@ -19,6 +19,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
+import com.example.mvvmlibrary.app.BaseApplication;
 import com.example.mvvmlibrary.base.data.BaseViewModel;
 
 
@@ -130,10 +131,6 @@ public abstract class BaseDataBindingActivity<VB extends ViewDataBinding, VM ext
     public abstract void hideLoading();
 
     public abstract void showToastTip(String tip);
-
-    public VM getViewModel() {
-        return viewModel;
-    }
 
 
     @Override

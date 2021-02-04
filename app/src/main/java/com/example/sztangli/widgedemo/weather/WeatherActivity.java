@@ -1,12 +1,18 @@
 package com.example.sztangli.widgedemo.weather;
 
 import android.os.Bundle;
+import android.util.Log;
+
+import androidx.lifecycle.Observer;
+
+import com.example.sztangli.widgedemo.base.app.WidgetDemoApplication;
 import com.example.sztangli.widgedemo.home.MainToolBarActivity;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.utils.ActivityUtils;
 import com.example.sztangli.widgedemo.weather.data.WeatherViewModel;
 import com.guyuan.handlein.base.databinding.ActivityWithToolbarBinding;
 import com.guyuan.handlein.base.ui.activity.BaseToolbarActivity;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -23,6 +29,7 @@ public class WeatherActivity extends BaseToolbarActivity<ActivityWithToolbarBind
 
         WeatherFragment mFragment = WeatherFragment.newInstance();
         ActivityUtils.addFragmentToActivity(fragmentManager, mFragment, R.id.fragment_container, WeatherFragment.TAG);
+
     }
 
 

@@ -35,7 +35,7 @@ object Versions {
     const val hitViewModule = "1.0.0-alpha01"
     const val appStartup = "1.0.0-alpha01"
     const val material = "1.2.1"
-    const val lifeCycle = "2.2.0"
+    const val lifeCycle = "2.3.0-rc01"
     const val multidex = "2.0.1"
     const val zxing = "3.3.3"
     const val eventBus = "3.2.0"
@@ -82,6 +82,7 @@ object AndroidX {
     const val lifeCycleExtension = "androidx.lifecycle:lifecycle-extensions:${Versions.lifeCycle}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifeCycle}"
     const val lifeCycleKT = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifeCycle}"
+    const val lifeCycleProcess = "androidx.lifecycle:lifecycle-process:${Versions.lifeCycle}"
     const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
     const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
 }

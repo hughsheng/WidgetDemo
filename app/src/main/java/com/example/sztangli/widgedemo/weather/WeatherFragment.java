@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import com.example.sztangli.widgedemo.BR;
 import com.example.sztangli.widgedemo.R;
+import com.example.sztangli.widgedemo.base.app.WidgetDemoApplication;
 import com.example.sztangli.widgedemo.databinding.FragmentWeatherBinding;
 import com.example.sztangli.widgedemo.weather.data.WeatherViewModel;
 import com.guyuan.handlein.base.ui.fragment.BaseFragment;
+
+import java.util.Observable;
 
 /**
  * created by com.tl on 2018-10-23

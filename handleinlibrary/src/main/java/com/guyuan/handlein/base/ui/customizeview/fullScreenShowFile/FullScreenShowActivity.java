@@ -93,11 +93,6 @@ public class FullScreenShowActivity extends BaseNoToolbarActivity<ActivityImagev
         });
     }
 
-    @Override
-    public BaseViewModel getViewModel() {
-        return null;
-    }
-
 
     @Override
     protected int getLayoutID() {

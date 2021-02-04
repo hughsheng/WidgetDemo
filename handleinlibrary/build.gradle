@@ -42,6 +42,7 @@ dependencies {
     compileOnly Android.meteria
     compileOnly AndroidX.appcompat
     compileOnly AndroidX.constraintlayout
+    compileOnly AndroidX.lifeCycleProcess
 //    compileOnly AndroidX.lifeCycleExtension
 //    compileOnly AndroidX.lifecycleRuntime
 //    compileOnly AndroidX.lifeCycleKT

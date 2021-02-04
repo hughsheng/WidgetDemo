@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.hughsheng'
+group = 'com.github.hughsheng'
 
 android {
     compileSdkVersion BuildConfig.compileSdkVersion
@@ -53,5 +53,16 @@ dependencies {
     compileOnly Retrofit.gson
     compileOnly Retrofit.adapter
     compileOnly Retrofit.logging
+
+
+    //以下按需引入
+    // 可选 - 帮助实现Service的LifecycleOwner
+    //   implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    // 可选 - ProcessLifecycleOwner给整个 app进程 提供一个lifecycle
+    compileOnly AndroidX.lifeCycleProcess
+    // 可选 - ReactiveStreams support for LiveData
+    //  implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+    // 可选 - Test helpers for LiveData
+    // testImplementation "androidx.arch.core:core-testing:$arch_version"
 
 }
