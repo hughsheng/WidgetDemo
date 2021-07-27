@@ -17,6 +17,7 @@
         <item>weather</item>
         <item>video</item>
         <item>workManager</item>
+        <item>barCode</item>
     </array>
 
     <array name="motion">

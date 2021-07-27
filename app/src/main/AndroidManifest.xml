@@ -47,6 +47,7 @@
             android:name="com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity"
             android:theme="@style/AppTheme.windowTranslucent" />
 
+        <activity android:name=".barcode.BarcodeActivity" />
         <!-- AliPay -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"

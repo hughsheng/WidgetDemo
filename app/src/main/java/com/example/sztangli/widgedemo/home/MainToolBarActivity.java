@@ -9,6 +9,7 @@ import com.example.mvvmlibrary.base.data.BaseViewModel;
 import com.example.sztangli.widgedemo.R;
 import com.example.sztangli.widgedemo.animation.AnimationToolBarActivity;
 import com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity;
+import com.example.sztangli.widgedemo.barcode.BarcodeActivity;
 import com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity;
 import com.example.sztangli.widgedemo.recycleListView.RecycleToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity;
@@ -102,6 +103,10 @@ public class MainToolBarActivity extends BaseToolbarActivity<ActivityWithToolbar
 
             case ConstanceValue.WORK_MANAGER:
                 show(WorkManagerActivity.class, ConstanceValue.WORK_MANAGER);
+                break;
+
+            case ConstanceValue.BARCODE:
+                show(BarcodeActivity.class, ConstanceValue.BARCODE);
                 break;
         }
     }

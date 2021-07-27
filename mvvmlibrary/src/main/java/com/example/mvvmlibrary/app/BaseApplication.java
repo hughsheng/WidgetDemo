@@ -29,7 +29,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         //注册App生命周期观察者
-        ProcessLifecycleOwner.get().getLifecycle().addObserver(new ApplicationLifecycleObserver());
+       // ProcessLifecycleOwner.get().getLifecycle().addObserver(new ApplicationLifecycleObserver());
         sharedPreferencesUtils = SharedPreferencesUtils.getInstance(this);
     }
 

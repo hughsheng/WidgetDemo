@@ -23,8 +23,8 @@ import javax.net.ssl.X509TrustManager;
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ApplicationComponent;
 import dagger.hilt.android.qualifiers.ApplicationContext;
+import dagger.hilt.components.SingletonComponent;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -37,7 +37,7 @@ import retrofit2.Retrofit;
  * @company : 固远（深圳）信息技术有限公司
  **/
 @Module
-@InstallIn(ApplicationComponent.class)
+@InstallIn(SingletonComponent.class)
 public class ApiServiceModule extends BaseApiServiceModule implements HttpSettingImpl {
 
     public ApiServiceModule() {
