@@ -18,6 +18,7 @@
         <item>video</item>
         <item>workManager</item>
         <item>barCode</item>
+        <item>lottie</item>
     </array>
 
     <array name="motion">

@@ -20,6 +20,7 @@ public class ConstanceValue {
     public static final String VIDEO = "video";
     public static final String WORK_MANAGER = "work_manager";
     public static final String BARCODE="barCode";
+    public static final String LOTTIE="lottie";
 
     //异常code
     public static final int HTTP_ERROR = 0x900;    //网络异常

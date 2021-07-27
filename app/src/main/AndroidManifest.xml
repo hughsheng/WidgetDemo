@@ -48,6 +48,7 @@
             android:theme="@style/AppTheme.windowTranslucent" />
 
         <activity android:name=".barcode.BarcodeActivity" />
+        <activity android:name=".lottie.LottieActivity"/>
         <!-- AliPay -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"

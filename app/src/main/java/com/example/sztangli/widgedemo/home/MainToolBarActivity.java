@@ -11,6 +11,7 @@ import com.example.sztangli.widgedemo.animation.AnimationToolBarActivity;
 import com.example.sztangli.widgedemo.articleShow.ArticleToolBarActivity;
 import com.example.sztangli.widgedemo.barcode.BarcodeActivity;
 import com.example.sztangli.widgedemo.expandabelListView.ExpandableToolBarActivity;
+import com.example.sztangli.widgedemo.lottie.LottieActivity;
 import com.example.sztangli.widgedemo.recycleListView.RecycleToolBarActivity;
 import com.example.sztangli.widgedemo.coordinatorsample.CoordinatorToolBarActivity;
 import com.example.sztangli.widgedemo.floatingButtom.FloatingButtonToolBarActivity;
@@ -107,6 +108,10 @@ public class MainToolBarActivity extends BaseToolbarActivity<ActivityWithToolbar
 
             case ConstanceValue.BARCODE:
                 show(BarcodeActivity.class, ConstanceValue.BARCODE);
+                break;
+
+            case ConstanceValue.LOTTIE:
+                show(LottieActivity.class, ConstanceValue.LOTTIE);
                 break;
         }
     }
