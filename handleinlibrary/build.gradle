@@ -35,6 +35,19 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDir(['libs'])
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -53,9 +66,13 @@ dependencies {
     androidTestCompileOnly Depend.espressoCore
 
     //封装的上拉下拉recycleview
-    api project(path: ':easy_recyclerview_library')
-    api project(path: ':httplibrary')
-    api project(path: ':mvvmlibrary')
+//    api project(path: ':easy_recyclerview_library')
+//    api project(path: ':httplibrary')
+//    api project(path: ':mvvmlibrary')
+
+    api(name: 'easy_recyclerview_library', ext: 'aar')
+    api(name: 'httplibrary', ext: 'aar')
+    api(name: 'mvvmlibrary', ext: 'aar')
 
     compileOnly SpinKit.runtime
 

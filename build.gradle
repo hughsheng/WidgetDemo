@@ -23,6 +23,9 @@ buildscript {
 
 allprojects {
     repositories {
+            flatDir {
+                dirs 'libs','../handleinlibrary/libs'
+            }
         maven { url 'http://maven.aliyun.com/repository/google' }
         maven { url 'http://maven.aliyun.com/repository/jcenter' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
